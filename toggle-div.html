@@ -20,17 +20,22 @@
 
           <script>
             var toggleBtn = document.getElementById("toggleBtn");
-            var myDiv = document.getElementById("myDiv");
+var myDiv = document.getElementById("myDiv");
 
-            if (window.innerWidth < 768) {
-            toggleBtn.addEventListener("click", function() {
-                if (myDiv.style.display === "none") {
-                myDiv.style.display = "block";
-                } else {
-                myDiv.style.display = "none";
-                }
-            });
-            }
+if (window.innerWidth < 768) {
+  var computedStyle = window.getComputedStyle(myDiv);
+  if (computedStyle.display === "none") {
+    myDiv.style.display = "block";
+  }
+  toggleBtn.addEventListener("click", function() {
+    if (myDiv.style.display === "none") {
+      myDiv.style.display = "block";
+    } else {
+      myDiv.style.display = "none";
+    }
+  });
+}
+
 
               
           </script>
