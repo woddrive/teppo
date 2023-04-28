@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Workout Generator | teppo.io</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Generate HYROX workouts to improve strength, speed, endurance, and overall work capacity." />  
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="teppo">
+    <link rel="shortcut icon" href="assets/img/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/icons/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/icons/safari-pinned-tab.svg" color="#373630">
+    <meta name="msapplication-TileColor" content="#fcec4f">
+    <meta name="theme-color" content="#f5f5eb">
+    <link rel="stylesheet" href="assets/css/material.css">
+  </head>
+  <body onload="hideGppLoader();hideBiasLoader()">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Teppo</span>              
+            <div class="mdl-layout-spacer"></div>
+            <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button">
+              <i class="material-icons">more_vert</i>
+          </button> 
+          <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for = "more-button">
+            <li class = "mdl-menu__item"><a href="about.html">About</a></li>
+            <li class = "mdl-menu__item"><a href="disclaimer.html">Disclaimer</a></li>
+            <li class = "mdl-menu__item"><a href="privacy.html">Privacy</a></li>
+            <li class = "mdl-menu__item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title"><img src="assets/img/teppo.svg" /> Teppo</span>
+          <nav class="mdl-navigation" role="navigation" aria-label="Main">
+            <a class="mdl-navigation__link" href="get-started.html">Get Started</a>
+            <a class="mdl-navigation__link mdl-navigation__link--current" href="workout-generator.html">Workout Generator</a>
+            <a class="mdl-navigation__link" href="benchmarks.html">Benchmarks</a>
+            <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="custom-workouts.html">Combinatorials</a>
+            <a class="mdl-navigation__link" href="programs.html">Programs</a>
+          </nav>
+          <div class="drawer-content">
+            <!--  -->
+          </div>
+        </div>
+        <main class="mdl-layout__content">
+          <div class="page-content">           
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"><h2>01</h2></div>
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">  
+                <p class="small mdl-color-text--yellow">TRAIN</p>
+                <h4>Workout Generator <i class="material-icons toggle-info mdl-color-text--primary">info</i></h4>
+                <p class="mdl-color-text--grey info-content">
+                  Quickly generate unique cross-training workouts to assist in your HYROX training. Select GPP 
+                  for workouts that incorporate the core Hyrox movements and variations, while Strength Bias 
+                  provides a mix of conventional weightlfting and Hyrox-specific movements to further strengthen 
+                  the athlete's skills base. Scale work parameters and loads as needed.
+                  <br><br>
+                  <span class="toggle-link mdl-color-text--primary small">Show less</span>
+                </p>
+                <div class="select-icon-align">
+                  <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                    <select id="exOptions" class="mdl-selectfield__select" onchange="showDiv(this.value)">
+                      <option value=""></option>
+                      <option value="gpp">GPP</option>
+                      <option value="bias">Strength Bias</option>
+                    </select>
+                    
+                    <label for="" class="mdl-selectfield__label">Priority</label>
+                  </div>
+                </div>
+                <!-- GPP VARIANT -->
+                <div id="gpp"  class="toggle-div" style="display: none;">
+                  <script src="252f89/o_8ec614743b4.js"></script>
+                  <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" >
+                    <select id="gppfunctionSelect" class="mdl-selectfield__select"  onchange="executegppFunc();showgppButtons()" required>
+                      <option value=""></option>
+                      <option value="gppwod">For time</option>
+                      <option value="gppamrap">Max rounds</option>
+                      <option value="gppemom">On the minute</option>
+                      <option value="intervals">Intervals</option>
+                    </select>
+                    <label class="mdl-selectfield__label">Structure</label>
+                    <span class="mdl-selectfield__error">Required</span>
+                  </div>
+                  <div id="gpploader" class="loader"></div>
+                  <div id="exCombo" style="display:none;"></div>
+                  <div class="icon-container">
+                    <a href="#" id="gppcopyButton" style="display: none;" onclick="copyGppToClipboard()">
+                      <i class="material-icons">content_copy</i>
+                    </a>
+                    <div style="position: absolute; margin-top:58px" id="gpp-message"></div>
+                    <a href="#" id="gppopenNew" style="display: none;" onclick="copyGPP()">
+                      <i class="material-icons">open_in_new</i>
+                    </a>
+                  </div>
+                  <div class="spacer-xl"></div>
+                  <button id="gppwodButton" style="display: none;" 
+                    class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--primary">
+                    <img src="assets/img/refresh.svg"/>
+                  </button>
+                </div>
+                <!-- STRENGTH BIAS VARIANT -->
+                <div id="bias"  class="toggle-div" style="display: none;">
+                  <script src="252f89/o_dd80d0c74df.js"></script>
+                  <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" >
+                    <select id="biasfunctionSelect" class="mdl-selectfield__select"  onchange="executebiasFunc();showbiasButtons()" required>
+                      <option value=""></option>
+                      <option value="biaswod">For time</option>
+                      <option value="biasamrap">Max rounds</option>
+                      <option value="biasemom">On the minute</option>
+                    </select>
+                    <label class="mdl-selectfield__label">Structure</label>
+                    <span class="mdl-selectfield__error">Required</span>
+                  </div> 
+                  <div id="biasloader" class="loader"></div>
+                  <div id="exComboBias" style="display:none;"></div>
+                  <div class="icon-container">
+                    <a href="#" id="biascopyButton" style="display: none;" onclick="copyBiasToClipboard()">
+                      <i class="material-icons">content_copy</i>
+                    </a>
+                    <div style="position: absolute; margin-top:58px" id="bias-message"></div>
+                    <a href="#" id="biasopenNew" style="display: none;" onclick="copyBias()">
+                      <i class="material-icons">open_in_new</i>
+                    </a>
+                  </div>
+                  <div class="spacer-xl"></div>
+                  <button id="biaswodButton" style="display: none;" 
+                    class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--primary">
+                    <img src="assets/img/refresh.svg"/>
+                  </button>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">&nbsp;</div>
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                &nbsp;
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="mdl-mini-footer">
+          <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo mdl-color-text--grey">&copy; <script>
+                document.write(new Date().getFullYear())
+              </script> teppo.io
+            </div>
+          </div>
+        </footer>        
+    </div>      
+    <script src="252f89/o_40b30b4.js"></script>
+    <script src="252f89/o_1a00db4.js"></script>
+    <script src="252f89/o_a93814707.js"></script>
+  </body>  
+</html>
+
+

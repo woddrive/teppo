@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Build custom HYROX training sessions | teppo.io</title>   
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="" />  
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="teppo">
+    <link rel="shortcut icon" href="assets/img/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/icons/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/icons/safari-pinned-tab.svg" color="#373630">
+    <meta name="msapplication-TileColor" content="#fcec4f">
+    <meta name="theme-color" content="#f5f5eb">
+    <link rel="stylesheet" href="assets/css/material.css">
+    <style>
+      body{overflow-x:hidden;}#exCombo2{transition:height 0.5s ease-out;}.hidden{display:none;}.hidden-mobile{display:block;}
+    </style>
+  </head>
+  <body onload="hideLoader()">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="drawer">
+        <a href="#" id="close-drawer"><i class="material-icons icon-large">close</i></a>
+        <h5>Estimate 1RM</h5>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weightLifted">
+          <label class="mdl-textfield__label" for="weightLifted">Weight Lifted (lbs or kgs)</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="repetitions">
+          <label class="mdl-textfield__label" for="repetitions">Reps Performed</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="big-spacer-top"></div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" 
+        onclick="calculate1RM()">Calculate</button>
+        <div class="big-spacer-top"></div>
+          <span id="result"></span>
+          <div class="big-spacer-top"></div>
+          <span id="result60"></span><br>
+          <span id="result65"></span><br>
+          <span id="result70"></span><br>
+          <span id="result75"></span><br>
+          <span id="result80"></span><br>
+          <span id="result85"></span><br>
+          <span id="result90"></span><br>
+          <span id="result95"></span>        
+      </div>
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Teppo</span>              
+            <div class="mdl-layout-spacer"></div>
+            <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button">
+              <i class="material-icons">more_vert</i>
+          </button> 
+          <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for = "more-button">
+            <li class = "mdl-menu__item"><a href="about.html">About</a></li>
+            <li class = "mdl-menu__item"><a href="disclaimer.html">Disclaimer</a></li>
+            <li class = "mdl-menu__item"><a href="privacy.html">Privacy</a></li>
+            <li class = "mdl-menu__item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title"><img src="assets/img/teppo.svg"/> Teppo</span>
+          <nav class="mdl-navigation" role="navigation" aria-label="Main">
+            <a class="mdl-navigation__link" href="get-started.html">Get Started</a>
+            <a class="mdl-navigation__link" href="workout-generator.html">Workout Generator</a>
+            <a class="mdl-navigation__link" href="benchmarks.html">Benchmarks</a>
+            <a class="mdl-navigation__link mdl-navigation__link--current mdl-menu__item--full-bleed-divider" href="custom-workouts.html">Combinatorials</a>
+            <a class="mdl-navigation__link" href="programs.html">Programs</a>
+          </nav>
+          <div class="drawer-content">
+            <!-- adsense? -->
+          </div>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+              <div class="mdl-grid" style="margin-bottom: 0px;">
+                <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"><h2>03</h2></div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">  
+                  <p class="small mdl-color-text--yellow">CREATE</p>
+                  <h4>Combinatorials <i class="material-icons toggle-info mdl-color-text--primary">info</i></h4>
+                  <p class="mdl-color-text--grey info-content">
+                    Create HYROX programming for your next workout or for use with group training. Quickly generate  
+                    unique exercise combinations and then move them to the staging area to customize with your required 
+                    work parameters. Append multiple combos in series for a killer workout!
+                    <br><br>
+                    <span class="toggle-link mdl-color-text--primary small">Show less</span>
+                  </p>                  
+                    
+                  <!-- first div needs to be hidden when editing mode is on -->
+                    <div id="firstDiv" class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" >
+                      <select id="exOptions" class="mdl-selectfield__select"  onchange="showButtons();createExCombo();showCopy()" required>
+                        <option value=""></option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
+                      <label for="games_wod_type" class="mdl-selectfield__label">Number of Exercises</label>
+                      <span class="mdl-selectfield__error">Required</span>
+                    </div> 
+                    <!-- end div -->       
+                                   
+                </div>
+              </div>
+              <div class="mdl-grid" style="margin-top:0; padding-top:0">
+                <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">&nbsp;</div>
+                
+                <!-- second div needs to be hidden when editing mode is on -->
+                <div id="comboDiv" class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone ">
+                  <div id="loader" class="loader"></div>
+                  <div id="exCombo" style="display:none;"></div>                      
+                  <div class="md-spacer"></div>
+                  <div class="icon-container">  
+                    <button id="comboButton" title="Refresh combo" style="display: none;" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--primary" > 
+                      <img src="assets/img/refresh.svg"/>
+                    </button>
+                    <button id="arrowBtn" title="Move to staging" style="display: none;" class="rotate mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--primary" onclick="copyCallout()"> 
+                      <img src="assets/img/arrow-right.svg"/>
+                    </button>
+                  </div>
+                </div>
+                <!-- end div -->
+
+
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone ">
+                  <div id="exCombo2" class="placeholder" style="display:none;"></div>
+                  <div class="icon-container with-margin">
+                    <a href="#" id="editButton" title="Edit details" style="display: none;" onclick="makeEditable()">
+                      <i class="material-icons material-icons-edit">edit</i>
+                    </a>
+                    <a href="#" id="clearDiv" title="Clear staging" style="display: none;" onclick="clearDiv()">
+                      <i class="material-icons">delete_forever</i>
+                    </a>
+                    <a href="#" id="open-drawer" title="Estimate 1RM + %" style="display: none;">
+                      <i class="material-icons material-icons-edit">calculate</i>
+                    </a>
+                    <a href="#" id="copyButton" title="Copy to clipboard" style="display: none;" onclick="copyToClipboard()">
+                      <i class="material-icons">content_copy</i>
+                    </a>
+                    <div style="position: absolute; margin-top:58px" id="message"></div>
+                    <a href="#" id="openNew" title="Use this workout" style="display: none;" onclick="copyText()">
+                      <i class="material-icons">open_in_new</i>
+                    </a>                        
+                  </div>                  
+                </div>
+                <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-grid--no-spacing">                   
+                </div>  
+              </div>
+            </div>
+        </main>
+        <footer class="mdl-mini-footer">
+          <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo mdl-color-text--grey">&copy; <script>
+                document.write(new Date().getFullYear())
+              </script> teppo.io
+            </div>
+          </div>
+          <!--<div class="mdl-mini-footer__right-section">
+            <div class="share-workout-container">
+              <div class="share-button-container">
+                <a href="#" id="shareWOD" title="Sharing options"  class="share-button">
+                  <i class="material-icons">share</i>
+                </a>
+              </div>
+              <div class="share-container">
+                <div class="share-icon">
+                  <a href="#"><img src="assets/img/twitter.svg"></a>
+                </div>
+                <div class="share-icon">
+                  <a href="#"><img src="assets/img/instagram.svg"></a>
+                </div>
+                <div class="share-icon">
+                  <a href="#"><img src="assets/img/facebook.svg"></a>
+                </div>
+              </div>
+            </div>
+          </div>-->
+        </footer>        
+    </div>      
+    <script src="252f89/o_40b30b4.js"></script>
+    <script src="252f89/o_1a00db4.js"></script>
+    <script src="252f89/o_cbbca5044.js"></script>
+    <script>
+      
+    // Open the drawer when the open button is clicked
+    document.getElementById("open-drawer").addEventListener("click", function() {
+      document.body.classList.add("drawer-open");
+    });
+    
+    // Close the drawer when the close button is clicked
+    document.getElementById("close-drawer").addEventListener("click", function() {
+      document.body.classList.remove("drawer-open");
+    });
+    
+    // Close the drawer when the overlay is clicked
+    document.querySelector(".overlay").addEventListener("click", function() {
+      document.body.classList.remove("drawer-open");
+    });
+    
+    </script>
+    <script>
+      var selectDiv = document.getElementById("firstDiv");
+      selectDiv.setAttribute("id", "firstDiv");
+    
+      var secondDiv = document.getElementById("comboDiv");
+      secondDiv.setAttribute("id", "comboDiv");
+    
+      var thirdDiv = document.getElementById("exCombo2");
+      thirdDiv.setAttribute("id", "exCombo2");
+      var thirdDivHeight = thirdDiv.offsetHeight;
+      var thirdDivIsExpanded = false;
+    
+      var toggleDivs = document.getElementById("editButton");
+    
+      toggleDivs.addEventListener("click", function() {
+        if (window.innerWidth < 768) {
+          selectDiv.classList.toggle("hidden");
+          secondDiv.classList.toggle("hidden");
+    
+          if (!thirdDivIsExpanded) {
+            thirdDiv.style.height = "500px";
+            thirdDivIsExpanded = true;
+          } else {
+            thirdDiv.style.height = "130px";
+            thirdDivIsExpanded = false;
+          }
+        }
+        else {
+          // do nothing if screen width is greater than 768px
+        }
+      });
+    
+      window.addEventListener("resize", function() {
+        if (window.innerWidth < 768) {
+          toggleDivs.classList.remove("hidden-mobile");
+        } else {
+          toggleDivs.classList.add("hidden-mobile");
+          thirdDivIsExpanded = false;
+          thirdDiv.style.height = "130px";
+          selectDiv.classList.remove("hidden");
+          secondDiv.classList.remove("hidden");
+        }
+      });
+    </script>
+
+  </body>  
+</html>
+
+
