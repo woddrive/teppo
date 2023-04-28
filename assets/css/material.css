@@ -5687,7 +5687,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       width: 100%; }
   .mdl-cell--12-col,
   .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
-    width: calc(100% - 8px); }
+    width: calc(100% - 16px); }
     .mdl-grid--no-spacing > .mdl-cell--12-col, .mdl-grid--no-spacing >
     .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
       width: 100%; }
@@ -6312,7 +6312,7 @@ hr.mini {
   font-family: 'Roboto';
 }
 
-.demo-layout {margin-top: 48px;}
+.demo-layout {margin-top: 36px;}
 
 .callout-layout {margin-top: 18px;}
 
