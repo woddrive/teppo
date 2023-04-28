@@ -24,14 +24,7 @@
     <link rel="stylesheet" href="assets/css/material.css">
     
     <style>
-      @media (max-width: 767px) {
-        .desktop-only {
-          display: none;
-        }
-        img {
-          display: none;
-        }
-      }
+      
       .start-card {
         padding: 20px 20px 14px;
         border-radius:4px;
@@ -39,6 +32,16 @@
         margin-bottom: 8px;
         }
         .start-card h5 {font-family: 'Roboto Mono', monospace; margin-top: 0; margin-bottom: 16px;}
+
+        @media (max-width: 767px) {
+          .desktop-only {
+            display: none;
+          }
+          img {
+            display: none;
+          }
+          .start-card {padding: 12px}
+        }
 
         img.img-card{
           max-width: 100%;
@@ -86,7 +89,7 @@
                 <p class="small mdl-color-text--yellow">GET STARTED</p>
               </div>
               <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
-                  <div class=" start-card">
+                  <div class="start-card">
                     
                     <h2 class="desktop-only">01</h2>
                     <h4>Train</h4>
