@@ -3578,7 +3578,7 @@ input.mdl-button[type="submit"] {
   .mdl-menu__item::-moz-focus-inner {
     border: 0; }
   .mdl-menu__item--full-bleed-divider {
-    border-bottom: 1px solid rgba(0,0,0, 0.12); }
+    border-bottom: 1px solid rgba(250,250,250,0.22); }
   .mdl-menu__item[disabled], .mdl-menu__item[data-mdl-disabled] {
     color: rgb(189,189,189);
     background-color: transparent;
@@ -6441,10 +6441,10 @@ hr.mini {
           max-height: 200px;
           overflow: auto;
         }
-        #exCombo2 {
+        /*#exCombo2 {
           max-height: 130px;
           overflow: auto;
-        }
+        }*/
       }
 
       #exComboBias {
