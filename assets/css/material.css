@@ -6434,6 +6434,20 @@ hr.mini {
           /*background-color: rgba(255, 255, 255, 0.13);*/
           z-index: -1;
         }
+        #exCombo3 {
+          padding: 18px;
+          border-radius:4px;
+          background-color: rgba(255,255,255,0.13);
+          font-family: 'Roboto Mono';
+          font-size: 14px;
+          line-height: 1.5;
+          margin-top: 12px;
+          margin-bottom: 20px;
+          min-height: 150px;
+          border: none;
+          transition: border 0.2s ease-in-out;
+          overflow: auto;
+          }
         
 
       @media (max-width: 767px) {
