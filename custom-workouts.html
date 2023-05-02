@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Build custom HYROX training sessions | teppo.io</title>   
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="" />  
+    <meta name="description" content="The Combinatorials tool enables athletes and coaches to quickly generate  
+    unique exercise combinations that can be combined and customized into complete training sessions." />  
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -26,11 +27,13 @@
       .hidden-mobile{display:block;}@media(max-width: 767px){.desktop-only{display: none;}}
     </style>
   </head>
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TT1LGD7HK"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-2TT1LGD7HK');
   </script>
   <body onload="hideLoader()">
@@ -198,6 +201,7 @@
         if (window.innerWidth < 768) {
           selectDiv.classList.toggle("hidden");
           secondDiv.classList.toggle("hidden");
+    
           if (!thirdDivIsExpanded) {
             thirdDiv.style.height = "500px";
             thirdDivIsExpanded = true;
@@ -207,7 +211,7 @@
           }
         }
         else {
-          // do nothing if screen width is greater than 768px
+          // do nothing
         }
       });
       window.addEventListener("resize", function() {
