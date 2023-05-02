@@ -26,13 +26,11 @@
       .hidden-mobile{display:block;}@media(max-width: 767px){.desktop-only{display: none;}}
     </style>
   </head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TT1LGD7HK"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-2TT1LGD7HK');
   </script>
   <body onload="hideLoader()">
@@ -92,7 +90,6 @@
             <a class="mdl-navigation__link" href="help.html">Help</a>
           </nav>
           <div class="drawer-content">
-            <!-- adsense? -->
           </div>
         </div>
         <main class="mdl-layout__content">
@@ -109,8 +106,6 @@
                     <br><br>
                     <span class="toggle-link mdl-color-text--primary small">Show less</span>
                   </p>                  
-                    
-                  <!-- first div needs to be hidden when editing mode is on -->
                     <div id="firstDiv" class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" >
                       <select id="exOptions" class="mdl-selectfield__select"  onchange="showButtons();createExCombo();showCopy()" required>
                         <option value=""></option>
@@ -123,14 +118,10 @@
                       <label for="games_wod_type" class="mdl-selectfield__label">Number of Exercises</label>
                       <span class="mdl-selectfield__error">Required</span>
                     </div> 
-                    <!-- end div -->       
-                                   
                 </div>
               </div>
               <div class="mdl-grid" style="margin-top:0; padding-top:0">
                 <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">&nbsp;</div>
-                
-                <!-- second div needs to be hidden when editing mode is on -->
                 <div id="comboDiv" class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone ">
                   <div id="loader" class="loader"></div>
                   <div id="exCombo" style="display:none;"></div>                      
@@ -144,9 +135,6 @@
                     </button>
                   </div>
                 </div>
-                <!-- end div -->
-
-
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone ">
                   <div id="exCombo2" class="placeholder" style="display:none;"></div>
                   <div class="icon-container with-margin">
@@ -180,68 +168,36 @@
               </script> teppo.io
             </div>
           </div>
-          <!--<div class="mdl-mini-footer__right-section">
-            <div class="share-workout-container">
-              <div class="share-button-container">
-                <a href="#" id="shareWOD" title="Sharing options"  class="share-button">
-                  <i class="material-icons">share</i>
-                </a>
-              </div>
-              <div class="share-container">
-                <div class="share-icon">
-                  <a href="#"><img src="assets/img/twitter.svg"></a>
-                </div>
-                <div class="share-icon">
-                  <a href="#"><img src="assets/img/instagram.svg"></a>
-                </div>
-                <div class="share-icon">
-                  <a href="#"><img src="assets/img/facebook.svg"></a>
-                </div>
-              </div>
-            </div>
-          </div>-->
         </footer>        
     </div>      
     <script src="252f89/o_40b30b4.js"></script>
     <script src="252f89/o_1a00db4.js"></script>
     <script src="252f89/o_cbbca5044.js"></script>
     <script>
-      
-    // Open the drawer when the open button is clicked
     document.getElementById("open-drawer").addEventListener("click", function() {
       document.body.classList.add("drawer-open");
     });
-    
-    // Close the drawer when the close button is clicked
     document.getElementById("close-drawer").addEventListener("click", function() {
       document.body.classList.remove("drawer-open");
     });
-    
-    // Close the drawer when the overlay is clicked
     document.querySelector(".overlay").addEventListener("click", function() {
       document.body.classList.remove("drawer-open");
     });
-    
     </script>
     <script>
       var selectDiv = document.getElementById("firstDiv");
       selectDiv.setAttribute("id", "firstDiv");
-    
       var secondDiv = document.getElementById("comboDiv");
       secondDiv.setAttribute("id", "comboDiv");
-    
       var thirdDiv = document.getElementById("exCombo2");
       thirdDiv.setAttribute("id", "exCombo2");
       var thirdDivHeight = thirdDiv.offsetHeight;
       var thirdDivIsExpanded = false;
-    
       var toggleDivs = document.getElementById("editButton");
-    
       toggleDivs.addEventListener("click", function() {
         if (window.innerWidth < 768) {
           selectDiv.classList.toggle("hidden");
           secondDiv.classList.toggle("hidden");
-    
           if (!thirdDivIsExpanded) {
             thirdDiv.style.height = "500px";
             thirdDivIsExpanded = true;
@@ -254,7 +210,6 @@
           // do nothing if screen width is greater than 768px
         }
       });
-    
       window.addEventListener("resize", function() {
         if (window.innerWidth < 768) {
           toggleDivs.classList.remove("hidden-mobile");
@@ -267,7 +222,6 @@
         }
       });
     </script>
-
   </body>  
 </html>
 
