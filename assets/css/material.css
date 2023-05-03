@@ -6448,8 +6448,14 @@ hr.mini {
           transition: border 0.2s ease-in-out;
           overflow: auto;
           }
-        
-
+        /*
+          @media (min-width: 767px) {
+            #exCombo2 {
+              max-height: 500px;
+              overflow: auto;
+            }
+          }
+          */
       @media (max-width: 767px) {
         #exCombo {
           max-height: 200px;
@@ -6476,7 +6482,7 @@ hr.mini {
         }
       
       
-      .callout #exCombo {font-size: 15px; height:fit-content;}
+      .callout #exCombo3 {font-size: 14px; height:fit-content;}
       .callout h3{font-family: 'Roboto Mono', monospace; color: #fcc04f; text-transform: uppercase; letter-spacing: 0.16px; margin-top: 24px;}
       .callout .icon-large {
         font-size: 36px;
