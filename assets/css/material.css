@@ -6461,10 +6461,10 @@ hr.mini {
           max-height: 200px;
           overflow: auto;
         }
-        #exCombo2 {
+        /*#exCombo2 {
           max-height: 130px;
           overflow: auto;
-        }
+        }*/
       }
 
       #exComboBias {
