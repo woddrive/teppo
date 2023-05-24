@@ -75,7 +75,7 @@
                   Quickly generate unique cross-training workouts to assist in your HYROX training. Select GPP 
                   for workouts that incorporate the core Hyrox movements and variations, while Strength Bias 
                   provides a mix of conventional weightlfting and Hyrox-specific movements to further strengthen 
-                  the athlete's skills base. Scale work parameters and loads as needed.
+                  the athlete's skills base. Edit work parameters and loads as needed. 
                   <br><br>
                   <span class="toggle-link mdl-color-text--primary small">Show less</span>
                 </p>
@@ -107,6 +107,9 @@
                   <div id="gpploader" class="loader"></div>
                   <div id="exCombo" style="display:none;"></div>
                   <div class="icon-container">
+                      <a href="#" id="editgppButton" title="Edit details" style="display: none;" onclick="makegppEditable()">
+                      <i class="material-icons material-icons-edit">edit</i>
+                    </a>
                     <a href="#" id="gppcopyButton" style="display: none;" onclick="copyGppToClipboard()">
                       <i class="material-icons">content_copy</i>
                     </a>
@@ -137,6 +140,9 @@
                   <div id="biasloader" class="loader"></div>
                   <div id="exComboBias" style="display:none;"></div>
                   <div class="icon-container">
+                      <a href="#" id="editbiasButton" title="Edit details" style="display: none;" onclick="makebiasEditable()">
+                      <i class="material-icons material-icons-edit-bias">edit</i>
+                    </a>
                     <a href="#" id="biascopyButton" style="display: none;" onclick="copyBiasToClipboard()">
                       <i class="material-icons">content_copy</i>
                     </a>
