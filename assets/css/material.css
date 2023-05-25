@@ -3592,11 +3592,13 @@ margin-left: 0; }
       background: transparent; }
   .mdl-menu__item:hover {
     background-color: rgba(0,0,0,0.1); }
-  .mdl-menu__item:focus {
+    /*
+    .mdl-menu__item:focus {
     outline: none;
     background-color: rgb(238,238,238); }
   .mdl-menu__item:active {
     background-color: rgb(224,224,224); }
+    */
 
 .mdl-menu__item--ripple-container {
   display: block;
