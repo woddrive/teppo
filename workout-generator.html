@@ -21,7 +21,7 @@
     <meta name="msapplication-TileColor" content="#fcec4f">
     <meta name="theme-color" content="#f5f5eb">
     <link rel="stylesheet" href="assets/css/material.css">
-    <style>@media(max-width: 767px){.desktop-only{display: none;}}</style>
+    <style>@media(max-width: 767px){.desktop-only{display: none;}}.material-icons{cursor:pointer;}</style>
   </head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TT1LGD7HK"></script>
@@ -117,6 +117,27 @@
                     <a href="#" id="gppopenNew" style="display: none;" onclick="copyGPP()">
                       <i class="material-icons">open_in_new</i>
                     </a>
+
+
+                    <div id="tooltipContainer1">
+                      <a id="shareButton" class="material-icons">share</a>
+                      <div id="tooltip1" class="tooltip1 hidden" style="position: absolute; bottom: 100%;">
+                        <a id="shareTwitter1" >
+                          <svg id="icon-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M22.46 6.003c-.77.343-1.597.575-2.466.68.887-.53 1.57-1.37 1.892-2.37-.83.493-1.75.85-2.73 1.042-.783-.835-1.897-1.356-3.133-1.356-2.37 0-4.292 1.922-4.292 4.29 0 .336.038.663.11.977-3.567-.18-6.724-1.89-8.84-4.482-.37.632-.58 1.37-.58 2.156 0 1.488.76 2.802 1.91 3.572-.705-.023-1.37-.215-1.95-.538v.054c0 2.08 1.48 3.813 3.44 4.204-.36.098-.738.15-1.13.15-.277 0-.545-.027-.805-.077.545 1.7 2.133 2.95 4.01 2.98-1.47 1.15-3.31 1.84-5.33 1.84-.345 0-.688-.02-1.025-.06 1.9 1.22 4.15 1.93 6.57 1.93 7.88 0 12.2-6.53 12.2-12.2 0-.186-.004-.37-.012-.555.84-.604 1.57-1.36 2.15-2.22z"></path>
+                        </svg>                          
+                      </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://teppo.io" target="_blank">
+                          <svg id="icon-facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path>
+                        </svg>
+                        </a>
+                      </div>
+                    </div>
+
+
+
+
                   </div>
                   <div class="big-spacer-top"></div>
                   <button id="gppwodButton" style="display: none;" 
@@ -150,6 +171,27 @@
                     <a href="#" id="biasopenNew" style="display: none;" onclick="copyBias()">
                       <i class="material-icons">open_in_new</i>
                     </a>
+                    
+
+                    <div id="tooltipContainer2">
+                      <a id="sharebiasButton" class="material-icons">share</a>
+                      <div id="tooltip2" class="tooltip2 hidden" style="position: absolute; bottom: 100%;">
+                        <a id="shareTwitter2" >
+                          <svg id="icon-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M22.46 6.003c-.77.343-1.597.575-2.466.68.887-.53 1.57-1.37 1.892-2.37-.83.493-1.75.85-2.73 1.042-.783-.835-1.897-1.356-3.133-1.356-2.37 0-4.292 1.922-4.292 4.29 0 .336.038.663.11.977-3.567-.18-6.724-1.89-8.84-4.482-.37.632-.58 1.37-.58 2.156 0 1.488.76 2.802 1.91 3.572-.705-.023-1.37-.215-1.95-.538v.054c0 2.08 1.48 3.813 3.44 4.204-.36.098-.738.15-1.13.15-.277 0-.545-.027-.805-.077.545 1.7 2.133 2.95 4.01 2.98-1.47 1.15-3.31 1.84-5.33 1.84-.345 0-.688-.02-1.025-.06 1.9 1.22 4.15 1.93 6.57 1.93 7.88 0 12.2-6.53 12.2-12.2 0-.186-.004-.37-.012-.555.84-.604 1.57-1.36 2.15-2.22z"></path>
+                        </svg>                          
+                      </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://teppo.io" target="_blank">
+                          <svg id="icon-facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path>
+                        </svg>
+                        </a>
+                      </div>
+                    </div>
+
+                    
+
+
                   </div>
                   <div class="big-spacer-top"></div>
                   <button id="biaswodButton" style="display: none;" 
@@ -176,7 +218,88 @@
     </div>      
     <script src="252f89/o_40b30b4.js"></script>
     <script src="252f89/o_1a00db4.js"></script>
-    <script src="252f89/o_a93814707.js"></script>
+    <script src="assets/js/a93814707.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var shareButton = document.getElementById('shareButton');
+        var tooltip1 = document.getElementById('tooltip1');
+        var shareBiasButton = document.getElementById('sharebiasButton');
+        var tooltip2 = document.getElementById('tooltip2');
+    
+        // Event Listener for shareButton
+        shareButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          tooltip1.classList.toggle('hidden');
+        });
+    
+        // Event Listener for shareBiasButton
+        shareBiasButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          tooltip2.classList.toggle('hidden');
+        });
+    
+        // Event Listener for document
+        document.addEventListener('click', function(e) {
+          if (e.target !== tooltip1 && !tooltip1.contains(e.target)) {
+            tooltip1.classList.add('hidden');
+          }
+          if (e.target !== tooltip2 && !tooltip2.contains(e.target)) {
+            tooltip2.classList.add('hidden');
+          }
+        });
+      });
+    
+      function shareDivContentOnTwitter(divId, appendString) {
+        var divContent = document.getElementById(divId).innerText;
+        var encodedContent = encodeURIComponent(appendString + "\n" + "\n" + divContent);
+        var twitterShareUrl = 'https://twitter.com/intent/tweet?text=' + encodedContent;
+        window.open(twitterShareUrl, '_blank');
+      }
+    
+      document.getElementById('shareTwitter1').addEventListener('click', function() {
+        var appendString = "#HYROX workout via teppo.io";
+        shareDivContentOnTwitter('exCombo', appendString);
+      });
+    
+      document.getElementById('shareTwitter2').addEventListener('click', function() {
+        var appendString = "#HYROX workout via teppo.io";
+        shareDivContentOnTwitter('exComboBias', appendString);
+      });
+    </script>
+    
+    
+    <!-- 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var shareButton = document.getElementById('shareButton');
+        var tooltip = document.getElementById('tooltip');
+      
+        // Event Listener for shareButton
+        shareButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          tooltip.classList.toggle('hidden');
+        });
+      
+        // Event Listener for document
+        document.addEventListener('click', function(e) {
+          if (e.target !== tooltip && !tooltip.contains(e.target)) {
+            tooltip.classList.add('hidden');
+          }
+        });
+      });
+      
+      function shareDivContentOnTwitter(divId, appendString) {
+        var divContent = document.getElementById(divId).innerText;
+        var encodedContent = encodeURIComponent(appendString + "\n" + "\n" + divContent);
+        var twitterShareUrl = 'https://twitter.com/intent/tweet?text=' + encodedContent;
+        window.open(twitterShareUrl, '_blank');
+      }
+      document.getElementById('shareTwitter').addEventListener('click', function() {
+          var appendString = "#HYROX workout via teppo.io";
+          shareDivContentOnTwitter('exCombo', appendString);
+      });
+    </script>
+    -->
   </body>  
 </html>
 
