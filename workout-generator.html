@@ -225,20 +225,14 @@
         var tooltip1 = document.getElementById('tooltip1');
         var shareBiasButton = document.getElementById('sharebiasButton');
         var tooltip2 = document.getElementById('tooltip2');
-    
-        // Event Listener for shareButton
         shareButton.addEventListener('click', function(e) {
           e.stopPropagation();
           tooltip1.classList.toggle('hidden');
         });
-    
-        // Event Listener for shareBiasButton
         shareBiasButton.addEventListener('click', function(e) {
           e.stopPropagation();
           tooltip2.classList.toggle('hidden');
         });
-    
-        // Event Listener for document
         document.addEventListener('click', function(e) {
           if (e.target !== tooltip1 && !tooltip1.contains(e.target)) {
             tooltip1.classList.add('hidden');
@@ -248,58 +242,21 @@
           }
         });
       });
-    
       function shareDivContentOnTwitter(divId, appendString) {
         var divContent = document.getElementById(divId).innerText;
         var encodedContent = encodeURIComponent(appendString + "\n" + "\n" + divContent);
         var twitterShareUrl = 'https://twitter.com/intent/tweet?text=' + encodedContent;
         window.open(twitterShareUrl, '_blank');
       }
-    
       document.getElementById('shareTwitter1').addEventListener('click', function() {
-        var appendString = "#HYROX workout via teppo.io";
+        var appendString = "#HYROX #WOD via teppo.io";
         shareDivContentOnTwitter('exCombo', appendString);
       });
-    
       document.getElementById('shareTwitter2').addEventListener('click', function() {
-        var appendString = "#HYROX workout via teppo.io";
+        var appendString = "#HYROX #WOD via teppo.io";
         shareDivContentOnTwitter('exComboBias', appendString);
       });
-    </script>
-    
-    
-    <!-- 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var shareButton = document.getElementById('shareButton');
-        var tooltip = document.getElementById('tooltip');
-      
-        // Event Listener for shareButton
-        shareButton.addEventListener('click', function(e) {
-          e.stopPropagation();
-          tooltip.classList.toggle('hidden');
-        });
-      
-        // Event Listener for document
-        document.addEventListener('click', function(e) {
-          if (e.target !== tooltip && !tooltip.contains(e.target)) {
-            tooltip.classList.add('hidden');
-          }
-        });
-      });
-      
-      function shareDivContentOnTwitter(divId, appendString) {
-        var divContent = document.getElementById(divId).innerText;
-        var encodedContent = encodeURIComponent(appendString + "\n" + "\n" + divContent);
-        var twitterShareUrl = 'https://twitter.com/intent/tweet?text=' + encodedContent;
-        window.open(twitterShareUrl, '_blank');
-      }
-      document.getElementById('shareTwitter').addEventListener('click', function() {
-          var appendString = "#HYROX workout via teppo.io";
-          shareDivContentOnTwitter('exCombo', appendString);
-      });
-    </script>
-    -->
+    </script>    
   </body>  
 </html>
 
