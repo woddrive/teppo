@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Build custom HYROX training sessions | teppo.io</title>   
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="Create your own custom HYROX training session. The Combinatorials tool enables athletes and coaches to quickly generate  
-    unique exercise combinations that can be combined and customized into a complete training experience." />  
+    <meta name="description" content="Create your own custom HYROX training sessions for home or gym. The Combinatorials tool enables 
+    athletes and coaches to quickly generate unique exercise combinations that can be combined and customized into a complete training 
+    experience." />  
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -24,12 +25,8 @@
     <link rel="stylesheet" href="assets/css/material.css">
     <style>
       body{overflow-x:hidden;}#exCombo2{transition:height 0.5s ease-out;}.hidden{display:none;}.hidden-mobile{display:block;}@media(max-width:767px){.desktop-only{display:none;}}
-      .tooltip{padding:10px 0;margin-bottom:16px;background-color:#fcc04f;border-radius:5px;z-index:1000;text-align:center;left:50%;transform:translateX(-50%);}
       .material-icons{cursor:pointer;}
-      .tooltip .material-icons{margin:12px 0;}.tooltip a{color:#212121;}
-      #tooltipContainer{position:relative;display:inline-block;margin-bottom:6px;}
-      #shareButton{display:none;text-decoration:none;}
-      #icon-facebook,#icon-twitter{fill:currentColor;height: 24px;width: 24px;margin: 12px 0;cursor: pointer;}
+      
     </style>
   </head>
   <!-- Google tag (gtag.js) -->
@@ -108,9 +105,9 @@
                   <p class="small mdl-color-text--yellow desktop-only">CREATE</p>
                   <h4>Combinatorials <i class="material-icons toggle-info mdl-color-text--primary">info</i></h4>
                   <p class="mdl-color-text--grey info-content">
-                    Create HYROX programming for your next workout or for use with group training. Quickly generate  
+                    Create programming for your next workout or for use with group training. Quickly generate  
                     unique exercise combinations and then move them to the staging area to customize with your required 
-                    work parameters. Append multiple combos in series for a killer workout!
+                    work parameters. Append multiple combos in series for a killer HYROX workout!
                     <br><br>
                     <span class="toggle-link mdl-color-text--primary small">Show less</span>
                   </p>                  
@@ -162,9 +159,6 @@
                     <a href="#" id="openNew" title="Start this workout" style="display: none;" onclick="copyText()">
                       <i class="material-icons">open_in_new</i>
                     </a>
-                      
-                    
-
                       <div id="tooltipContainer">
                         <!-- Tooltip Trigger -->
                         <a id="shareButton" class="material-icons">share</a>
@@ -281,7 +275,7 @@
         window.open(twitterShareUrl, '_blank');
       }
       document.getElementById('shareTwitter').addEventListener('click', function() {
-          var appendString = "#HYROX workout made with teppo.io";
+          var appendString = "#HYROX workout via teppo.io";
           shareDivContentOnTwitter('exCombo2', appendString);
       });
     </script>
