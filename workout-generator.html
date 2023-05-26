@@ -38,11 +38,10 @@
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">Teppo</span>              
             <div class="mdl-layout-spacer"></div>
-            <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button">
+            <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu">
               <i class="material-icons">more_vert</i>
-          </button> 
-          <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-            for = "more-button">
+            </button>
+          <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="more-button" id="more-menu" aria-labelledby="more-button">
             <li class = "mdl-menu__item"><a href="about.html">About</a></li>
             <li class = "mdl-menu__item"><a href="disclaimer.html">Disclaimer</a></li>
             <li class = "mdl-menu__item"><a href="privacy.html">Privacy</a></li>
