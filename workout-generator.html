@@ -54,7 +54,7 @@
           <span class="mdl-layout-title"><img src="assets/img/teppo.svg" /> Teppo</span>
           <nav class="mdl-navigation" role="navigation" aria-label="Main">
             <a class="mdl-navigation__link" href="get-started.html">Get Started</a>
-            <a class="mdl-navigation__link mdl-navigation__link--current" href="workout-generator.html">Workout Generator</a>
+            <a class="mdl-navigation__link mdl-navigation__link--current" href="workout-generator.html" aria-current="page">Workout Generator</a>
             <a class="mdl-navigation__link" href="benchmarks.html">Benchmarks</a>
             <a class="mdl-navigation__link" href="custom-workouts.html">Combinatorials</a>
             <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="programs.html">Programs</a>
@@ -68,10 +68,10 @@
           <div class="page-content">           
             <div class="mdl-grid" style="margin-top: 0;">
               <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"><h2>01</h2></div>
-              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">  
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone" aria-label="Workout Generator">  
                 <p class="small mdl-color-text--yellow desktop-only">TRAIN</p>
                 <h4>Workout Generator<i class="material-icons toggle-info mdl-color-text--primary" style="margin-left: 5px;">info</i></h4>
-                <p class="mdl-color-text--grey info-content">
+                <p class="mdl-color-text--grey info-content" aria-expanded="false">
                   Quickly generate unique cross-training workouts to assist in your HYROX training. Select GPP 
                   for workouts that incorporate the HYROX-specific movements and variations, while Strength Bias 
                   adds a mix of conventional weightlfting to further elevate the athletic performance. 
@@ -81,12 +81,11 @@
                 </p>
                 <div class="select-icon-align">
                   <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
-                    <select id="exOptions" class="mdl-selectfield__select" onchange="showDiv(this.value)">
+                    <select id="exOptions" class="mdl-selectfield__select" onchange="showDiv(this.value)" aria-labelledby="priority-label">
                       <option value=""></option>
                       <option value="gpp">GPP</option>
                       <option value="bias">Strength Bias</option>
                     </select>
-                    
                     <label for="" class="mdl-selectfield__label">Priority</label>
                   </div>
                 </div>
@@ -94,7 +93,7 @@
                 <div id="gpp"  class="toggle-div" style="display: none;">
                   <script src="252f89/o_8ec614743b4.js"></script>
                   <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" >
-                    <select id="gppfunctionSelect" class="mdl-selectfield__select"  onchange="executegppFunc();showgppButtons()" required>
+                    <select id="gppfunctionSelect" class="mdl-selectfield__select"  onchange="executegppFunc();showgppButtons()" required aria-labelledby="gpp-structure-label">
                       <option value=""></option>
                       <option value="gppwod">For time</option>
                       <option value="gppamrap">Max rounds</option>
@@ -107,20 +106,18 @@
                   <div id="gpploader" class="loader"></div>
                   <div id="exCombo" style="display:none;"></div>
                   <div class="icon-container">
-                      <a href="#" id="editgppButton" title="Edit details" style="display: none;" onclick="makegppEditable()">
+                      <a href="#" id="editgppButton" title="Edit details" style="display: none;" onclick="makegppEditable()" aria-label="Edit workout details">
                       <i class="material-icons material-icons-edit">edit</i>
                     </a>
-                    <a href="#" id="gppcopyButton" style="display: none;" onclick="copyGppToClipboard()">
+                    <a href="#" id="gppcopyButton" style="display: none;" onclick="copyGppToClipboard()" aria-label="Copy workout to clipboard">
                       <i class="material-icons">content_copy</i>
                     </a>
                     <div style="position: absolute; margin-top:58px" id="gpp-message"></div>
-                    <a href="#" id="gppopenNew" style="display: none;" onclick="copyGPP()">
+                    <a href="#" id="gppopenNew" style="display: none;" onclick="copyGPP()" aria-label="Open workout in new tab">
                       <i class="material-icons">open_in_new</i>
                     </a>
-
-
                     <div id="tooltipContainer1">
-                      <a id="shareButton" class="material-icons">share</a>
+                      <a id="shareButton" class="material-icons" aria-label="Share on social media">share</a>
                       <div id="tooltip1" class="tooltip1 hidden" style="position: absolute; bottom: 100%;">
                         <a id="shareTwitter1" >
                           <svg id="icon-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -134,10 +131,6 @@
                         </a>
                       </div>
                     </div>
-
-
-
-
                   </div>
                   <div class="big-spacer-top"></div>
                   <button id="gppwodButton" style="display: none;" 
@@ -149,7 +142,7 @@
                 <div id="bias"  class="toggle-div" style="display: none;">
                   <script src="252f89/o_dd80d0c74df.js"></script>
                   <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" >
-                    <select id="biasfunctionSelect" class="mdl-selectfield__select"  onchange="executebiasFunc();showbiasButtons()" required>
+                    <select id="biasfunctionSelect" class="mdl-selectfield__select"  onchange="executebiasFunc();showbiasButtons()" required aria-labelledby="bias-structure-label">
                       <option value=""></option>
                       <option value="biaswod">For time</option>
                       <option value="biasamrap">Max rounds</option>
@@ -161,20 +154,18 @@
                   <div id="biasloader" class="loader"></div>
                   <div id="exComboBias" style="display:none;"></div>
                   <div class="icon-container">
-                      <a href="#" id="editbiasButton" title="Edit details" style="display: none;" onclick="makebiasEditable()">
+                      <a href="#" id="editbiasButton" title="Edit details" style="display: none;" onclick="makebiasEditable()" aria-label="Edit workout details">
                       <i class="material-icons material-icons-edit-bias">edit</i>
                     </a>
-                    <a href="#" id="biascopyButton" style="display: none;" onclick="copyBiasToClipboard()">
+                    <a href="#" id="biascopyButton" style="display: none;" onclick="copyBiasToClipboard()" aria-label="Copy workout to clipboard">
                       <i class="material-icons">content_copy</i>
                     </a>
                     <div style="position: absolute; margin-top:58px" id="bias-message"></div>
-                    <a href="#" id="biasopenNew" style="display: none;" onclick="copyBias()">
+                    <a href="#" id="biasopenNew" style="display: none;" onclick="copyBias()" aria-label="Open workout in new tab">
                       <i class="material-icons">open_in_new</i>
                     </a>
-                    
-
                     <div id="tooltipContainer2">
-                      <a id="sharebiasButton" class="material-icons">share</a>
+                      <a id="sharebiasButton" class="material-icons" aria-label="Share on social media">share</a>
                       <div id="tooltip2" class="tooltip2 hidden" style="position: absolute; bottom: 100%;">
                         <a id="shareTwitter2" >
                           <svg id="icon-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -188,10 +179,6 @@
                         </a>
                       </div>
                     </div>
-
-                    
-
-
                   </div>
                   <div class="big-spacer-top"></div>
                   <button id="biaswodButton" style="display: none;" 
@@ -207,7 +194,7 @@
             </div>
           </div>
         </main>
-        <footer class="mdl-mini-footer">
+        <footer class="mdl-mini-footer" role="contentinfo">
           <div class="mdl-mini-footer__left-section">
             <div class="mdl-logo mdl-color-text--grey">&copy; <script>
                 document.write(new Date().getFullYear())
