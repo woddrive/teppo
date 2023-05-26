@@ -3,7 +3,6 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Please sign in to continue to WODdrive.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <title>My workout | teppo.io</title>
   <meta name="robots" content="noindex, nofollow">
@@ -21,19 +20,7 @@
     <meta name="theme-color" content="#f5f5eb">
   <link rel="stylesheet" href="assets/css/material.css">
   <style>
-    a {text-decoration: none;}
-    .header-row {
-      display: flex;
-      align-items: center;
-    }
-    
-    h3 {
-      margin-right: auto;
-    }
-    
-    a {
-      margin-left: 16px;
-    }
+    a{text-decoration:none;}.header-row{display:flex;align-items:center;}h3{margin-right:auto;}a{margin-left:16px;}
   </style>
   </head>
   <!-- Google tag (gtag.js) -->
@@ -60,35 +47,34 @@
               <span class="brand">Teppo</span>
               <div class="header-row">  
                 <h3>Workout</h3>
-                <!-- Use Material Icons as controls to increase or decrease font size -->
-                <a href="#"  id="decrease-font-button"  >
-                  <img src="assets/img/font-size-decrease.svg" width="24px">
+                <a href="#" id="decrease-font-button" aria-label="Decrease Font Size">
+                  <img src="assets/img/font-size-decrease.svg" width="24px" alt="Decrease Font Size">
                 </a>
                 &nbsp;
-                <a href="#" id="increase-font-button" >
-                  <img src="assets/img/font-size-increase.svg" width="24px">
+                <a href="#" id="increase-font-button" aria-label="Increase Font Size">
+                  <img src="assets/img/font-size-increase.svg" width="24px" alt="Increase Font Size">
                 </a>
               </div>
-              <div id="exCombo3"></div>
+              <div id="exCombo3" role="region" aria-live="polite" aria-atomic="true"></div>
               <script>
                 const copiedHTML = localStorage.getItem('copiedHTML');
                 document.getElementById('exCombo3').innerHTML = copiedHTML;
                 localStorage.removeItem('copiedHTML');
               </script>
               <span class="accordion">
-                <a title="Workout timer" class="mdl-button mdl-js-button mdl-button--icon"> 
+                <a title="Workout timer" class="mdl-button mdl-js-button mdl-button--icon" aria-expanded="false" aria-controls="timer-panel"> 
                   <i class="material-icons">timer</i>
                 </a>
               </span>
-              <div class="panel">
-                <h4><span id="time"></span></h4>
-                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="start();">
+              <div class="panel" aria-hidden="true">
+                <h4><span id="time" aria-live="assertive"></span></h4>
+                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="start();" aria-label="Start Timer">
                   <i class="material-icons">play_arrow</i>
                 </button>
-                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="stop();">
+                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="stop();" aria-label="Pause Timer">
                   <i class="material-icons">pause</i>
                 </button>
-                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="reset();">
+                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="reset();" aria-label="Reset Timer">
                   <i class="material-icons">replay</i>
                 </button>
               </div>              
@@ -99,20 +85,13 @@
     </div>
     <script src="252f89/o_40b30b4.js"></script>
     <script>
-      // Get the text div element
       var text = document.getElementById("exCombo3");
-
-      // Add event listeners to the icon buttons to decrease or increase font size
       document.getElementById("decrease-font-button").addEventListener("click", function() {
-        // Get the current font size of the text div
         var fontSize = parseFloat(window.getComputedStyle(text, null).getPropertyValue('font-size'));
-        // Decrease the font size by 2px
         text.style.fontSize = (fontSize - 2) + 'px';
       });
       document.getElementById("increase-font-button").addEventListener("click", function() {
-        // Get the current font size of the text div
         var fontSize = parseFloat(window.getComputedStyle(text, null).getPropertyValue('font-size'));
-        // Increase the font size by 2px
         text.style.fontSize = (fontSize + 2) + 'px';
       });
     </script>

@@ -1,65 +1,61 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Please sign in to continue to WODdrive.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Teppo | A workout generator and training resource for Hyrox athletes</title>
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="Teppo is designed for athletes competing in the HYROX. 
-    Whether your a beginner or pro, Teppo provides free workouts designed specifically to enhance athletic performance as it relates 
-    to the physical demands of the HYROX competition. Workouts consist primarily of the movements that are encountered during the 
-    event and are structured in a variety of formats that are structured in ways to improve strength, speed, endurance, and 
-    overall work capacity. Teppo has the HYROX workouts you need to take your fitness to the next level and crush your competition." />  
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="teppo">
-    <link rel="shortcut icon" href="assets/img/icons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/icons/site.webmanifest">
-    <link rel="mask-icon" href="assets/img/icons/safari-pinned-tab.svg" color="#373630">
-    <meta name="msapplication-TileColor" content="#fcec4f">
-    <meta name="theme-color" content="#f5f5eb">
-    <link rel="canonical" href="https://teppo.io/">
-    <link rel="stylesheet" href="assets/css/material.css">
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TT1LGD7HK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Please sign in to continue to WODdrive.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Teppo | A workout generator and training resource for Hyrox athletes</title>
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Teppo is designed for athletes competing in the HYROX. Whether you're a beginner or pro, Teppo provides free workouts designed specifically to enhance athletic performance as it relates to the physical demands of the HYROX competition. Workouts consist primarily of the movements encountered during the event and are structured in a variety of formats to improve strength, speed, endurance, and overall work capacity. Teppo has the HYROX workouts you need to take your fitness to the next level and crush your competition." />  
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="teppo">
+  <link rel="shortcut icon" href="assets/img/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/icons/site.webmanifest">
+  <link rel="mask-icon" href="assets/img/icons/safari-pinned-tab.svg" color="#373630">
+  <meta name="msapplication-TileColor" content="#fcec4f">
+  <meta name="theme-color" content="#f5f5eb">
+  <link rel="canonical" href="https://teppo.io/">
+  <link rel="stylesheet" href="assets/css/material.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2TT1LGD7HK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'G-2TT1LGD7HK');
-  </script>
-  <body class="bg" onload="ranGen()">
-    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout"> 
-      <main class="demo-main mdl-layout__content">
-        <div class="demo-container mdl-grid">
-          <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone">&nbsp;</div>
-          <div class="login-content mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
-            <div class="login">
-              <img src="assets/img/teppo.svg" height="100px;"/>
-              <h1 class="start">Teppo</h1>                  
-              <p>A Training Companion for HYROX Athletes</p>
-              <a href="get-started.html" class="mdl-button mdl-button--brand mdl-button--raised mdl-button--colored mdl-js-button " tabindex="0" role="button" aria-pressed="false">
-                GET STARTED
-              </a>
-              <div class="big-spacer-top"></div>
-              <script src="252f89/o_94494fb61.js"></script>
-              <div id="challenge">
-                <span class="mdl-color-text--primary">WORKOUT OF THE DAY</span>
-                <div id="daily"></div>
-              </div>
-            </div>            
+  gtag('config', 'G-2TT1LGD7HK');
+</script>
+<body class="bg" onload="ranGen()">
+<div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout" role="main">
+  <main class="demo-main mdl-layout__content">
+    <div class="demo-container mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone" aria-hidden="true">&nbsp;</div>
+      <div class="login-content mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+        <div class="login">
+          <img src="assets/img/teppo.svg" height="100px" alt="Teppo Logo">
+          <h1 class="start">Teppo</h1>
+          <p>A Training Companion for HYROX Athletes</p>
+          <a href="get-started.html" class="mdl-button mdl-button--brand mdl-button--raised mdl-button--colored mdl-js-button" tabindex="0" role="button" aria-pressed="false">
+            GET STARTED
+          </a>
+          <div class="big-spacer-top"></div>
+          <script src="252f89/o_94494fb61.js"></script>
+          <div id="challenge" role="region" aria-label="Workout of the Day">
+            <span class="mdl-color-text--primary">WORKOUT OF THE DAY</span>
+            <div id="daily" aria-live="polite"></div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
-    <script src="252f89/o_40b30b4.js"></script>
-  </body>
+  </main>
+</div>
+<script src="252f89/o_40b30b4.js"></script>
+</body>
 </html>
