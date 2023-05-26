@@ -39,11 +39,11 @@
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">Teppo</span>
           <div class="mdl-layout-spacer"></div>
-            <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button">
-              <i class="material-icons">more_vert</i>
+          <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu">
+            <i class="material-icons">more_vert</i>
           </button>
           <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-            for = "more-button">
+            for = "more-button" aria-labelledby="more-button">
             <li class = "mdl-menu__item"><a href="about.html">About</a></li>
             <li class = "mdl-menu__item"><a href="disclaimer.html">Disclaimer</a></li>
             <li class = "mdl-menu__item"><a href="privacy.html">Privacy</a></li>
@@ -56,7 +56,7 @@
           <nav class="mdl-navigation" role="navigation" aria-label="Main">
             <a class="mdl-navigation__link" href="get-started.html">Get Started</a>
             <a class="mdl-navigation__link" href="workout-generator.html">Workout Generator</a>
-            <a class="mdl-navigation__link mdl-navigation__link--current" href="benchmarks.html">Benchmarks</a>
+            <a class="mdl-navigation__link mdl-navigation__link--current" href="benchmarks.html" aria-current="page">Benchmarks</a>
             <a class="mdl-navigation__link" href="custom-workouts.html">Combinatorials</a>
             <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="programs.html">Programs</a>
             <a class="mdl-navigation__link" href="help.html">Help</a>
@@ -83,7 +83,7 @@
                   }
               </script>
                 <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" >
-                  <select id="exOptions" class="mdl-selectfield__select"  onchange="showDiv(this.value);showTimer()" required>
+                  <select id="exOptions" class="mdl-selectfield__select"  onchange="showDiv(this.value);showTimer()" required aria-required="true" aria-label="Select Benchmark">
                     <option value=""></option>
                     <option value="hyrox">HYROX</option>
                     <option value="pft">PFT</option>
@@ -156,37 +156,30 @@
                     Run 4000m
                   </div>
                 </div>
-
-                <!-- timer -->
                 <div id="timer-controls" style="display: none;">
                   <span class="accordion">
-                    <a title="Workout timer" class="mdl-button mdl-js-button mdl-button--icon"> <!-- mdl-cell--hide-desktop -->
+                    <a title="Workout timer" class="mdl-button mdl-js-button mdl-button--icon"> 
                       <i class="material-icons">timer</i>
                     </a>
                   </span>
-                  <div class="panel">
-                    <h4><span id="time"></span></h4>
-                    <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="start();">
+                  <div class="panel" aria-hidden="true">
+                    <h4><span id="time" aria-live="assertive"></span></h4>
+                    <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="start();" aria-label="Start Timer">
                       <i class="material-icons">play_arrow</i>
                     </button>
-                    <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="stop();">
+                    <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="stop();" aria-label="Pause Timer">
                       <i class="material-icons">pause</i>
                     </button>
-                    <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="reset();">
+                    <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="reset();" aria-label="Reset Timer">
                       <i class="material-icons">replay</i>
                     </button>
-                    <div class="md-spacer"></div>
-                  </div>
+                  </div> 
                 </div>
                 <script>
-                // show some buttons after onchange event
                 function showTimer() {
                   document.getElementById("timer-controls").style.display = "block";
                 }
               </script>
-                  
-
-                  
               </div>
               <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">&nbsp;</div>
               <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
@@ -195,7 +188,7 @@
             </div>
           </div>
         </main>
-        <footer class="mdl-mini-footer">
+        <footer class="mdl-mini-footer" role="contentinfo">
           <div class="mdl-mini-footer__left-section">
             <div class="mdl-logo mdl-color-text--grey">&copy; 2022-<script> 
                 document.write(new Date().getFullYear())
@@ -304,5 +297,3 @@
     </script>
   </body>
 </html>
-
-
