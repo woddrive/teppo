@@ -30,7 +30,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-2TT1LGD7HK');
   </script>
   <body>
@@ -39,181 +38,175 @@
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">Teppo</span>
           <div class="mdl-layout-spacer"></div>
-            <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button">
+            <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu">
               <i class="material-icons">more_vert</i>
           </button>
-          <ul class = "mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-            for = "more-button">
-            <li class = "mdl-menu__item"><a href="about.html">About</a></li>
-            <li class = "mdl-menu__item"><a href="disclaimer.html">Disclaimer</a></li>
-            <li class = "mdl-menu__item"><a href="privacy.html">Privacy</a></li>
-            <li class = "mdl-menu__item"><a href="contact.html">Contact</a></li>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="more-button" id="more-menu" aria-labelledby="more-button">
+            <li class="mdl-menu__item"><a href="about.html">About</a></li>
+            <li class="mdl-menu__item"><a href="disclaimer.html">Disclaimer</a></li>
+            <li class="mdl-menu__item"><a href="privacy.html">Privacy</a></li>
+            <li class="mdl-menu__item"><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </header>
-        <div class="mdl-layout__drawer">
-          <span class="mdl-layout-title"><img src="assets/img/teppo.svg" /> Teppo</span>
-          <nav class="mdl-navigation" role="navigation" aria-label="Main">
-            <a class="mdl-navigation__link" href="get-started.html">Get Started</a>
-            <a class="mdl-navigation__link" href="workout-generator.html">Workout Generator</a>
-            <a class="mdl-navigation__link" href="benchmarks.html">Benchmarks</a>
-            <a class="mdl-navigation__link" href="custom-workouts.html">Combinatorials</a>
-            <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="programs.html">Programs</a>
-            <a class="mdl-navigation__link mdl-navigation__link--current" href="help.html">Help</a>
-          </nav>
-          <div class="drawer-content">
-            <!-- -->
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title"><img src="assets/img/teppo.svg" /> Teppo</span>
+        <nav class="mdl-navigation" role="navigation" aria-label="Main">
+          <a class="mdl-navigation__link" href="get-started.html">Get Started</a>
+          <a class="mdl-navigation__link" href="workout-generator.html">Workout Generator</a>
+          <a class="mdl-navigation__link" href="benchmarks.html">Benchmarks</a>
+          <a class="mdl-navigation__link" href="custom-workouts.html">Combinatorials</a>
+          <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="programs.html">Programs</a>
+          <a class="mdl-navigation__link mdl-navigation__link--current" href="help.html">Help</a>
+        </nav>
+        <div class="drawer-content">
+          <!-- -->
+        </div>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-grid" style="margin-top: 0;">
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"><h2>05</h2></div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+              <h4>Help</h4>
+              <p class="mdl-color-text--grey">Additional information to help you get the most out of using Teppo.</p>
+              <script>
+                function showDiv(divID) {
+                  var divs = document.getElementsByClassName('toggle-div');
+                  for (var i = 0; i < divs.length; i++) {
+                    divs[i].style.display = 'none';
+                  }
+                  document.getElementById(divID).style.display = 'block';
+                }
+              </script>
+              <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                <select id="exOptions" class="mdl-selectfield__select" onchange="showDiv(this.value)" required aria-label="Select Topic">
+                  <option value=""></option>
+                  <option value="standards">HYROX standards</option>
+                  <option value="pft">PFT completion time</option>
+                  <option value="generator">Workout generator</option>
+                  <option value="custom">Custom workouts</option>
+                </select>
+                <label class="mdl-selectfield__label" for="exOptions">Topic</label>
+                <span class="mdl-selectfield__error">Required</span>
+              </div>
+              <!--  -->
+              <div id="standards" class="toggle-div" style="display: none;">
+                <div class="big-spacer-top"></div>
+                <p>Check out the official HYROX <a href="https://hyrox.com/wp-content/uploads/2022/12/EN_R5_SINGLE_RULEBOOK_EN_SEASON-22_23-1.pdf" aria-label="HYROX rulebook">rulebook</a>
+                  for everything you need to know about divisions, rankings, and event standards.
+                </p>
+
+              </div>
+              <div id="pft" class="toggle-div" style="display: none;">
+                <div class="big-spacer-top"></div>
+                <p>
+                  Looking to compete in the HYROX? Your <a href="benchmarks.html" aria-label="PFT completion time">PFT</a> completion time is a useful indicator
+                  for assessing where you rank among the competition.
+                </p>
+                <ul class="mdl-list">
+                  <li class="mdl-list__item mdl-list__item--two-line">
+                    <span class="mdl-list__item-primary-content">
+                      <i class="material-icons mdl-list__item-avatar mdl-color-text--yellow">looks_one</i>
+                      <span>HYROX PRO</span>
+                      <span class="mdl-list__item-sub-title">15-25 minutes</span>
+                    </span>
+                  </li>
+                  <li class="mdl-list__item mdl-list__item--two-line">
+                    <span class="mdl-list__item-primary-content">
+                      <i class="material-icons mdl-list__item-avatar mdl-color-text--yellow">looks_two</i>
+                      <span>HYROX Single</span>
+                      <span class="mdl-list__item-sub-title">25-35 minutes</span>
+                    </span>
+                  </li>
+                  <li class="mdl-list__item mdl-list__item--two-line">
+                    <span class="mdl-list__item-primary-content">
+                      <i class="material-icons mdl-list__item-avatar mdl-color-text--yellow">looks_3</i>
+                      <span>HYROX Doubles</span>
+                      <span class="mdl-list__item-sub-title">30-45 minutes</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div id="generator" class="toggle-div" style="display: none;">
+                <h6>Controls</h6>
+                <p>
+                  Teppo's <a href="workout-generator.html" aria-label="Free HYROX Workout Generator">Workout Generator</a> allows athletes to quickly generate unique cross-training workouts that can serve
+                  as either a standalone workout or be integrated into a HYROX training program.
+                </p>
+                <p>
+                  Your first task is to select your <code>Training priority</code>. Your options are General Physical Preparedness (GPP) or Strength Bias.
+                  GPP workouts incorporate the core Hyrox movements and their variations, whereas a Strength Bias priority
+                  will deliver a mix of conventional weightlifting (deadlifts, barbell squats, presses, etc.) and Hyrox-specific movements.
+                </p>
+                <p>Next, select the <code>Structure</code> of your workout, which is categorized in terms of work parameters:</p>
+                <p>
+                  <code>For time</code><br>
+                  The athlete will complete a finite amount of work as quickly as possible. This work parameter can take many forms,
+                  the most common being a series of exercises completed for multiple rounds.
+                </p>
+                <p>
+                  <code>Max rounds</code><br>
+                  Often referred to as "AMRAP" (As Many rounds As Possible), these workouts are defined by completing as much work
+                  as possible within a specific period of time. For example, the athlete completes a series of 3 exercises and repeats
+                  the series over and over against a fixed duration.
+                </p>
+                <p>
+                  <code>On the minute</code><br>
+                  Every minute on the minute; with a running clock work is completed at the top of each minute (EMOM), or every other minute (E2MOM),
+                  or every third minute (E3MOM), and so on. The athlete's objective is to complete the work well before the minute elapses and the
+                  next round begins.
+                </p>
+                <h6>Workouts</h6>
+                <p>Selecting the <code>Structure</code> will automatically load the first result of the workout generator.</p>
+                <p>Other controls to be aware of:</p>
+                <p><i class="material-icons mdl-color-text--yellow">refresh</i><br>&#8627; Reloads the current selections to generate another workout</p>
+                <p><i class="material-icons mdl-color-text--yellow">edit</i><br>&#8627; Makes the workout content editable</p>
+                <p><i class="material-icons mdl-color-text--yellow">content_copy</i><br>&#8627; Copies the current workout to your clipboard</p>
+                <p><i class="material-icons mdl-color-text--yellow">open_in_new</i><br>&#8627; Sends the workout to a new tab that includes a timer</p>
+                <p><i class="material-icons mdl-color-text--yellow">share</i><br>&#8627; Share the workout on social media</p>
+                <br>
+                <p>
+                  Changing either <code>Training priority</code> or <code>Structure</code> will clear the current workout and start the process over again.
+                </p>
+              </div>
+              <div id="custom" class="toggle-div" style="display: none;">
+                <h6>Controls</h6>
+                <p>
+                  Teppo's <a href="custom-workouts.html" aria-label="Create cusomt HYROX workouts">Combinatorials</a> tool enables athletes and coaches to quickly generate
+                  unique exercise combinations that can be combined and customized into complete training sessions.
+                </p>
+                <p>First select the <code>Number of exercises</code> you wish to combine. Teppo will then randomly draw from the same exercise pool used
+                  in the workout generator to create a combination based on the number selected.
+                </p>
+                <p>Now get to work building your training session:</p>
+                <p><i class="material-icons mdl-color-text--yellow">refresh</i><br>&#8627; Reloads the current selection to generate another combo</p>
+                <p><i class="material-icons mdl-color-text--yellow">arrow_forward</i><br>&#8627; Moves the current combo to the adjacent staging area, repeat to append multiple combos in series</p>
+                <p><i class="material-icons mdl-color-text--yellow">edit</i><br>&#8627; Converts the staging area to editable text </p>
+                <p><i class="material-icons mdl-color-text--yellow">delete_forever</i><br>&#8627; Clears all content in the staging area </p>
+                <p><i class="material-icons mdl-color-text--yellow">calculate</i><br>&#8627; Opens a calculator for 1RMs and training percentages </p>
+                <p><i class="material-icons mdl-color-text--yellow">content_copy</i><br>&#8627; Copy and paste your custom training into email or social media </p>
+                <p><i class="material-icons mdl-color-text--yellow">open_in_new</i><br>&#8627; Sends your custom workout to a new tab</p>
+                <p><i class="material-icons mdl-color-text--yellow">share</i><br>&#8627; Share your custom workout on social media</p>
+                <br>
+                <p>
+                  You can change and reload <code>Number of exercises</code> repeatedly without changing content already in the staging area.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <main class="mdl-layout__content">
-          <div class="page-content">
-            <div class="mdl-grid" style="margin-top: 0;">
-              <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"><h2>05</h2></div>
-              <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                <h4>Help</h4>
-                <p class="mdl-color-text--grey">Additional information to help you get the most out of using Teppo.</p>
-                <script>
-                  function showDiv(divID) {
-                      var divs = document.getElementsByClassName('toggle-div');
-                      for (var i=0; i < divs.length; i++) {
-                          divs[i].style.display = 'none';
-                      } 
-                      document.getElementById(divID).style.display = 'block';
-                  }
-               </script>
-                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" >
-                  <select id="exOptions" class="mdl-selectfield__select"  onchange="showDiv(this.value)" required>
-                    <option value=""></option>
-                    <option value="standards">HYROX standards</option>
-                    <option value="pft">PFT completion time</option>
-                    <option value="generator">Workout generator</option>
-                    <option value="custom">Custom workouts</option>
-                    <!--<option value="loads">Training loads and work parameters</option>-->
-                  </select>
-                  <label for="" class="mdl-selectfield__label">Topic</label>
-                  <span class="mdl-selectfield__error">Required</span>
-                </div>
-                <!--  -->
-                <div id="standards"  class="toggle-div" style="display: none;">
-                  <div class="big-spacer-top"></div>
-                  <p>Check out the official HYROX <a href="https://hyrox.com/wp-content/uploads/2022/12/EN_R5_SINGLE_RULEBOOK_EN_SEASON-22_23-1.pdf">rulebook</a> 
-                    for everything you need to know about divisions, rankings, and event standards.
-                  </p>
-                  
-                </div>
-                <div id="pft"  class="toggle-div" style="display: none;">
-                  <div class="big-spacer-top"></div>
-                  <p>
-                    Looking to compete in the HYROX? Your <a href="benchmarks.html">PFT</a> completion time is a useful indicator 
-                    for assessing where you rank among the competition.
-                  </p>
-                  <ul class="mdl-list">
-                    <li class="mdl-list__item mdl-list__item--two-line">
-                      <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-avatar mdl-color-text--yellow">looks_one</i>
-                        <span>HYROX PRO</span>
-                        <span class="mdl-list__item-sub-title">15-25 minutes</span>
-                      </span>
-                    </li>
-                    <li class="mdl-list__item mdl-list__item--two-line">
-                      <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-avatar mdl-color-text--yellow">looks_two</i>
-                        <span>HYROX Single</span>
-                        <span class="mdl-list__item-sub-title">25-35 minutes</span>
-                      </span>
-                    </li>
-                    <li class="mdl-list__item mdl-list__item--two-line">
-                      <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-avatar mdl-color-text--yellow">looks_3</i>
-                        <span>HYROX Doubles</span>
-                        <span class="mdl-list__item-sub-title">30-45 minutes</span>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div id="generator"  class="toggle-div" style="display: none;">
-                  <h6>Controls</h6>
-                  <p>
-                    Teppo's <a href="workout-generator.html">Workout Generator</a> allows athletes to quickly generate unique cross-training workouts that can serve
-                    as either a standalone workout or be integrated into a HYROX training program.
-                  </p>
-                  <p>
-                    Your first task is to select your <code>Training priority</code>. Your options are General Physical Preparedness (GPP) or Strength Bias. 
-                  GPP workouts incorporate the core Hyrox movements and their variations, whereas a Strength Bias priority 
-                  will deliver a mix of conventional weightlfting (deadlifts, barbell squats, presses, etc.) and Hyrox-specific movements.
-                  </p>
-                  <p>Next, select the <code>Structure</code> of your workout, which is categorized in terms of work parameters:</p>
-                  <p>
-                    <code>For time</code><br>
-                      The athlete will complete a finite amount of work as quickly as possible. This work parameter can take many forms, 
-                      the most common being a series of exercises completed for multiple rounds.
-                  </p>
-                  <p>
-                    <code>Max rounds</code><br>
-                    Often referred to as "AMRAP" (As Many rounds As Possible), these workouts are defined by completing as much work 
-                    as possible wihtin a specific period of time. For example, the athlete complete a series of 3 exercises and repeats
-                    the series over and over against a fixed duration.
-                  </p>
-                  <p>
-                    <code>On the minute</code><br>
-                    Every minute on the minute; with a running clock work is completed at the top of each minute (EMOM), or every other minute (E2MOM), 
-                    or every third minute (E3MOM), and so on. The athlete's objective is to complete the work well before the minute elapses and the 
-                    next round begins.  
-                  </p>
-                  <h6>Workouts</h6>
-                  <p>Selecting the <code>Structure</code> will automatically load the first result of the workout generator.</p>
-                  <p>Other controls to be aware of:</p>
-                  <p><i class="material-icons mdl-color-text--yellow">refresh</i><br>&#8627; Reloads the current selections to generate another workout</p>
-                  <p><i class="material-icons mdl-color-text--yellow">edit</i><br>&#8627; Makes the workout content editable</p>
-                  <p><i class="material-icons mdl-color-text--yellow">content_copy</i><br>&#8627; Copies the current workout to your clipboard</p>
-                  <p><i class="material-icons mdl-color-text--yellow">open_in_new</i><br>&#8627; Sends the workout to a new tab that includes a timer</p>
-                  <p><i class="material-icons mdl-color-text--yellow">share</i><br>&#8627; Share the workout on social media</p>
-                  <br>
-                  <p>
-                    Changing either <code>Training priority</code> or <code>Structure</code> will clear the current workout and start the process over again.
-                  </p>                  
-                </div>
-                <div id="custom"  class="toggle-div" style="display: none;">
-                  <h6>Controls</h6>
-                  <p>
-                    Teppo's <a href="custom-workouts.html">Combinatorials</a> tool enables athletes and coaches to quickly generate  
-                    unique exercise combinations that can be combined and customized into complete training sessions.
-                  </p>
-                  <p>First select the <code>Number of exercises</code> you wish to combine. Teppo will then randomly draw from the same exercise pool used 
-                      in the workout generator to create a combination based on number selected.
-                  </p>
-                  <p>Now get to work building your training session:</p>
-                  <p><i class="material-icons mdl-color-text--yellow">refresh</i><br>&#8627; Reloads the current selection to generate another combo</p>
-                  <p><i class="material-icons mdl-color-text--yellow">arrow_forward</i><br>&#8627; Moves the current combo to the adjacent staging area, repeat to append multiple combos in series</p>
-                  <p><i class="material-icons mdl-color-text--yellow">edit</i><br>&#8627; Converts the staging area to editable text </p>
-                  <p><i class="material-icons mdl-color-text--yellow">delete_forever</i><br>&#8627; Clears all content in the staging area </p>
-                  <p><i class="material-icons mdl-color-text--yellow">calculate</i><br>&#8627; Opens a calculator for 1RMs and training percentages </p>
-                  <p><i class="material-icons mdl-color-text--yellow">content_copy</i><br>&#8627; Copy and paste your custom training into email or social media </p>
-                  <p><i class="material-icons mdl-color-text--yellow">open_in_new</i><br>&#8627; Sends your custom workout to a new tab</p>
-                  <p><i class="material-icons mdl-color-text--yellow">share</i><br>&#8627; Share your custom workout on social media</p>
-                  <br>
-                  <p>
-                    You can change and reload <code>Number of exercises</code> repeatedly without changing content already in the staging area.
-                  </p>
-                </div>
-                <!--<div id="loads"  class="toggle-div" style="display: none;">
-                </div>-->
-             </div>
-            </div>
+      </main>
+      <footer class="mdl-mini-footer" role="contentinfo">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo mdl-color-text--grey">&copy; 2022-<script> 
+              document.write(new Date().getFullYear())
+            </script> teppo.io
           </div>
-        </main>
-        <footer class="mdl-mini-footer">
-          <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo mdl-color-text--grey">&copy; 2022-<script> 
-                document.write(new Date().getFullYear())
-              </script> teppo.io
-            </div>
-          </div>
-        </footer> 
-    </div>      
+        </div>
+      </footer>
+    </div>
     <script src="252f89/o_40b30b4.js"></script>
     <script src="252f89/o_1a00db4.js"></script>
   </body>
 </html>
-
-
