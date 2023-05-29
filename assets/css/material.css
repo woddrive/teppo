@@ -3432,14 +3432,14 @@ margin-left: 0; }
     .mdl-list__item--two-line .mdl-list__item-primary-content .mdl-list__item-secondary-content {
       height: 36px; }
     .mdl-list__item--two-line .mdl-list__item-primary-content .mdl-list__item-sub-title {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 400;
-      line-height: 24px;
+      line-height: 20px;
       letter-spacing: 0;
       line-height: 18px;
       color: #757575;
       display: block;
-      padding: 0; }
+      padding: 8px 0 0; }
 
 .mdl-list__item--three-line {
   height: 88px; }
@@ -6359,7 +6359,7 @@ hr.mini {
 
 .login h1 {font-family: 'Racing Sans One'; color: #ffffff;}
 .login .small {font-size: 85%; margin: 50px 0 0; color: #777;}
-.login .lead {font-size:18px;}
+.login .lead {font-size:16px;}
 
 .login .mdl-button {margin-top:24px; font-weight:500; letter-spacing: 0.16px;}
 .login, .error {text-align: center;}
