@@ -210,5 +210,23 @@
     </div>
     <script src="252f89/o_40b30b4.js"></script>
     <script src="252f89/o_1a00db4.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var selectedOption = urlParams.get("selectedOption");
+        
+        if (selectedOption) {
+          var selectElement = document.getElementById("exOptions");
+          selectElement.value = selectedOption;
+          
+          // Show the corresponding div based on the selected option
+          var hiddenDiv = document.getElementById(selectedOption);
+          hiddenDiv.style.display = "block";
+        }
+      });
+    </script>
+    
+        
   </body>
 </html>
