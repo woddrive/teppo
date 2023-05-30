@@ -207,8 +207,8 @@ h6 {
   font-weight: 400;
   text-transform: uppercase;
   line-height: 24px;
-  margin-top: 16px;
-  margin-bottom: 14px; }
+  margin-top: 24px;
+  margin-bottom: 16px; }
 
 p {
   font-size: 14px;
@@ -2050,7 +2050,7 @@ margin-bottom: 32px; }
   background-color: rgb(62,39,35) !important; }
 
 .mdl-color-text--grey {
-  color: rgb(158,158,158) !important; }
+  color: rgb(170,170,170) !important; }
 
 .mdl-color--grey {
   background-color: rgb(158,158,158) !important; }
