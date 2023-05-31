@@ -74,10 +74,16 @@
                 <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="stop();" aria-label="Pause Timer">
                   <i class="material-icons">pause</i>
                 </button>
-                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="reset();" aria-label="Reset Timer">
+                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="reset();" aria-label="Reset Timer">
                   <i class="material-icons">replay</i>
                 </button>
-              </div>              
+                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="lap();">
+                  <i class="material-icons">directions_run</i>
+                </button>
+                <br>
+                
+              </div> 
+              <div id="laps"></div>             
             </div>
           </div>
         </div>
@@ -117,87 +123,117 @@
         }
     </script>
     <script>
-      var	clsStopwatch = function() {
-          var	startAt	= 0;	
-          var	lapTime	= 0;	
-
-          var	now	= function() {
-                  return (new Date()).getTime(); 
-              }; 
-
+      var clsStopwatch = function() {
+          var startAt = 0;
+          var lapTime = 0;
+          var laps = [];
+  
+          var now = function() {
+              return (new Date()).getTime();
+          };
+  
           this.start = function() {
-                  startAt	= startAt ? startAt : now();
-              };
-
+              startAt = startAt ? startAt : now();
+          };
+  
           this.stop = function() {
-                  lapTime	= startAt ? lapTime + now() - startAt : lapTime;
-                  startAt	= 0; 
-              };
-
+              lapTime = startAt ? lapTime + now() - startAt : lapTime;
+              startAt = 0;
+          };
+  
           this.reset = function() {
-                  lapTime = startAt = 0;
-              };
+              lapTime = startAt = 0;
+              laps = [];
+          };
+  
+          this.lap = function() {
+              if (startAt) {
+                  laps.push(this.time()); // Use the time method to get the current stopwatch time
+              }
+          };
+  
+          this.getLaps = function() {
+              return laps;
+          };
+  
           this.time = function() {
-                  return lapTime + (startAt ? now() - startAt : 0); 
-              };
+              return lapTime + (startAt ? now() - startAt : 0);
+          };
       };
-
+  
       var x = new clsStopwatch();
       var $time;
+      var $laps;
       var clocktimer;
-
+  
       function pad(num, size) {
           var s = "0000" + num;
           return s.substr(s.length - size);
-          }
-
+      }
+  
       function formatTime(time) {
           var h = m = s = ms = 0;
           var newTime = '';
-
-          h = Math.floor( time / (60 * 60 * 1000) );
+  
+          h = Math.floor(time / (60 * 60 * 1000));
           time = time % (60 * 60 * 1000);
-          m = Math.floor( time / (60 * 1000) );
+          m = Math.floor(time / (60 * 1000));
           time = time % (60 * 1000);
-          s = Math.floor( time / 1000 );
+          s = Math.floor(time / 1000);
           ms = time % 1000;
-
+  
           newTime = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 3);
           return newTime;
-          }
-
+      }
+  
       function show() {
           $time = document.getElementById('time');
+          $laps = document.getElementById('laps');
           update();
-          }
-
+      }
+  
+      function lap() {
+          x.lap();
+          update();
+      }
+  
       function update() {
           $time.innerHTML = formatTime(x.time());
-          }
-
+  
+          var lapTimes = x.getLaps();
+          $laps.innerHTML = lapTimes.map(function(time, index) {
+              return 'Lap ' + (index + 1) + ': ' + formatTime(time);
+          }).join('<br>');
+      }
+  
       function start() {
-            if (!clocktimer) {
+          if (!clocktimer) {
               document.getElementById('alertSound').play();
-            }
-            clocktimer = setInterval(update, 1);
-            x.start();
           }
-          
-
+          clocktimer = setInterval(update, 1);
+          x.start();
+      }
+  
       function stop() {
           x.stop();
           clearInterval(clocktimer);
-          }
+      }
+  
+      function reset() {
+          stop();
+          x.reset();
+          update();
+          document.getElementById('alertSound').pause();
+          document.getElementById('alertSound').currentTime = 0;
+          clocktimer = null;
+      }
+  
+      // Call show function when page loads
+      window.onload = function() {
+          show();
+      };
+  </script>
+  
 
-          function reset() {
-            stop();
-            x.reset();
-            update();
-            document.getElementById('alertSound').pause();
-            document.getElementById('alertSound').currentTime = 0;
-            clocktimer = null;
-          }
-          
-    </script>
   </body>
 </html>
