@@ -77,8 +77,8 @@
                 <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="reset();" aria-label="Reset Timer">
                   <i class="material-icons">replay</i>
                 </button>
-                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="lap();">
-                  <i class="material-icons">directions_run</i>
+                <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="lap();" aria-label="Record a Lap Time">
+                  <i class="material-icons">playlist_add</i>
                 </button>
                 <br>
                 
@@ -202,7 +202,7 @@
   
           var lapTimes = x.getLaps();
           $laps.innerHTML = lapTimes.map(function(time, index) {
-              return 'Lap ' + (index + 1) + ': ' + formatTime(time);
+              return 'Round ' + (index + 1) + ': ' + formatTime(time);
           }).join('<br>');
       }
   
