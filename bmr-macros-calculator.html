@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Macronutrient calculator | teppo.io</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Optimize your HYROX training by finding the perfect macronutrient ratio for your body. 
+    Use our intuitive calculator for the best results." />  
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="teppo">
+    <link rel="shortcut icon" href="assets/img/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/icons/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/icons/safari-pinned-tab.svg" color="#373630">
+    <meta name="msapplication-TileColor" content="#fcec4f">
+    <meta name="theme-color" content="#f5f5eb">
+    <link rel="stylesheet" href="assets/css/material.css">
+    <style>@media(max-width:767px){.desktop-only{display:none;}}</style>
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TT1LGD7HK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2TT1LGD7HK');
+  </script>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Teppo</span>
+          <div class="mdl-layout-spacer"></div>
+            <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu">
+              <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="more-button" id="more-menu" aria-labelledby="more-button">
+            <li class="mdl-menu__item"><a href="disclaimer.html">Disclaimer</a></li>
+            <li class="mdl-menu__item"><a href="privacy.html">Privacy</a></li>
+            <li class="mdl-menu__item"><a href="contact.html">Contact</a></li>
+            <li class="mdl-menu__item"><a href="help.html">Help</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title"><img src="assets/img/teppo.svg" /> Teppo</span>
+        <nav class="mdl-navigation" role="navigation" aria-label="Main">
+          <a class="mdl-navigation__link" href="get-started.html">Get Started</a>
+          <a class="mdl-navigation__link" href="hyrox-workout-generator.html">Workout Generator</a>
+          <a class="mdl-navigation__link" href="benchmark-workouts.html">Benchmarks</a>
+          <a class="mdl-navigation__link" href="custom-hyrox-workouts.html">Combinatorials</a>
+          <a class="mdl-navigation__link" href="free-hyrox-programs.html">Programs</a>
+          <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider mdl-navigation__link--current" href="bmr-macros-calculator.html" aria-current="page">Gains</a>
+          <a class="mdl-navigation__link" href="faqs.html">FAQs</a>
+        </nav>
+        <div class="drawer-content">
+          <!-- -->
+        </div>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-grid" style="margin-top: 0;">
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"><h2>07</h2></div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+              <p class="small mdl-color-text--yellow desktop-only">BMR</p>
+              <h4>Fuel the Gains</h4>
+              <p class="mdl-color-text--grey">Estimate your caloric and macromutrient requirements to fuel your HYROX training.</p>
+              <div class="md-spacer"></div>
+              <form>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" style="margin-right: 40px;" for="male">
+                  <input type="radio" id="male" class="mdl-radio__button" name="options" value="1" checked>
+                  <span class="mdl-radio__label">Male</span>
+                </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="female">
+                  <input type="radio" id="female" class="mdl-radio__button" name="options" value="2">
+                  <span class="mdl-radio__label">Female</span>
+                </label>
+                <br>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top: 16px; margin-right:20px; width:50px">
+                  <input class="mdl-textfield__input" type="text" id="age" name="age" aria-label="Your age in years">
+                  <label class="mdl-textfield__label">Age</label>
+                </div>
+                
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-right:20px; width:85px">
+                  <input class="mdl-textfield__input" type="text" id="height" name="height" aria-label="Your height in inches">
+                  <label class="mdl-textfield__label">Height (in)</label>
+                </div>
+                
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:90px">
+                  <input class="mdl-textfield__input" type="text" id="weight" name="weight" aria-label="Your weight in pounds">
+                  <label class="mdl-textfield__label">Weight (lbs)</label>
+                </div>
+                <br>
+                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                  <select  id="race" name="race" class="mdl-selectfield__select" required aria-label="">
+                    <option value=""></option>
+                    <option value="white">Caucasian</option>
+                    <option value="black">Black or African American</option>
+                    <option value="hispanic">Hispanic or Latino</option>
+                    <option value="asian">Asian</option>
+                  </select>
+                  <label class="mdl-selectfield__label" for="exOptions">Ethnicity</label>
+                  <span class="mdl-selectfield__error">Required</span>
+                </div>
+                <br>
+                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                  <select id="activity_level" name="activity_level" class="mdl-selectfield__select" required aria-label="">
+                    <option value=""></option>
+                    <option value="1.2">Little to no training</option>
+                    <option value="1.27">1-3 days</option>
+                    <option value="1.55">3-5 days</option>
+                    <option value="1.71">6-7 days</option>
+                    <option value="1.9">6-7 days + physical job</option>
+                  </select>
+                  <label class="mdl-selectfield__label" for="exOptions">Training Frequency</label>
+                  <span class="mdl-selectfield__error">Required</span>
+                </div>
+                <br>
+                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                  <select id="ratio" name="ratio" class="mdl-selectfield__select" required aria-label="">
+                    <option value=""></option>
+                    <option value="0.25">MODERATE: 25% Protein / 50% Carbs / 25% Fat</option>
+                    <option value="0.3">ZONE: 30% Protein / 40% Carbs / 30% Fat</option>
+                    <option value="0.4">LOW CARB: 40% Protein / 25% Carbs / 35% Fat</option>
+                    <option value="0.45">KETOGENIC: 45% Protein / 10% Carbs / 45% Fat</option>
+                    <option value="0.5">HIGH PROTEIN: 50% Protein / 20% Carbs / 30% Fat</option>
+                  </select>
+                  <label class="mdl-selectfield__label" for="exOptions">Macronutrient Ratio</label>
+                  <span class="mdl-selectfield__error">Required</span>
+                </div>
+              
+              
+              
+              </form>
+              
+            
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="mdl-mini-footer" role="contentinfo">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo mdl-color-text--grey">&copy; 2022-<script> 
+              document.write(new Date().getFullYear())
+            </script> teppo.io
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="252f89/o_40b30b4.js"></script>
+    <script src="252f89/o_1a00db4.js"></script>
+  </body>
+</html>
