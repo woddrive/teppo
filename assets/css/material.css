@@ -3789,11 +3789,12 @@ margin-left: 0; }
 .mdl-layout-title {
   display: block;
   position: relative;
-  font-family: 'Racing Sans One';
+  font-family: 'Roboto Mono';
   font-size: 24px;
+  text-transform: uppercase;
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.1em;
   box-sizing: border-box; }
 
 .mdl-layout-spacer {
@@ -6370,7 +6371,7 @@ hr.mini {
   color: #424242;
 }*/
 
-.login h1 {font-family: 'Racing Sans One'; color: #ffffff;}
+.login h1 {font-family: 'Roboto Mono'; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff;}
 .login .small {font-size: 85%; margin: 50px 0 0; color: #777;}
 .login .lead {font-size:16px;}
 
@@ -6383,8 +6384,8 @@ hr.mini {
 
     @media screen and (max-width: 468px) {
       .login h1 {
-        font-size: 60px;
-        line-height: 60px;
+        font-size: 48px;
+        line-height: 50px;
         margin-top: 26px;
         margin-bottom: 18px; 
       }
