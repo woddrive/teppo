@@ -6910,7 +6910,7 @@ hr.mini {
   display: block;
 }
 
-  @media (max-width: 767px) {
+  @media  (min-width: 364px) and (max-width: 1024px) { /* 768 */
     button.rotate {
       transform: rotate(90deg);
     }
@@ -7105,16 +7105,39 @@ hr.mini {
       #icon-facebook,#icon-twitter{fill:currentColor;height: 24px;width: 24px;margin: 12px 0;cursor: pointer;}
   
       /*get started screen */
-      .start-card{padding:20px 20px 14px;border-radius:4px;background-color:rgba(255,255,255,0.13);
-        margin-bottom:8px;cursor: pointer;}
-      .start-card:hover{background-color:rgba(255,255,255,0.09)}
-      .start-card h5{font-family:'Roboto Mono',monospace;margin-top:0;margin-bottom:16px;}
+      .start-card{
+        padding:20px 20px 14px;
+        border-radius:4px;
+        background-color:rgba(255,255,255,0.13);
+        margin-bottom:8px;
+        cursor: pointer;
+      }
+      .start-card:hover{
+        background-color:rgba(255,255,255,0.09)
+      }
+      .start-card h4{
+        font-family:'Roboto Mono',monospace;
+        margin-top:0;
+        margin-bottom:16px;
+      }
         @media (max-width:767px)
         {
-          .desktop-only{display:none;}
-          .start-card{padding:12px;}
-          h5{font-size:18px !important;}
+          .desktop-only{
+            display:none;
+          }
+          .start-card{
+            padding:10px 12px 3px;
+          }
+          .start-card p{
+            font-size: 12px;
+          }
+          .start-card h4{
+            font-size:20px !important;
+            margin-bottom: 8px;
+            color: #fcc04f;
+          }
         }
+
 
         #laps {
           margin-top: 32px;
