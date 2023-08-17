@@ -6520,7 +6520,7 @@ hr.mini {
         font-size: 36px;
         margin-right: 24;
       }
-      .callout .brand {font-size:24px; font-family: 'Racing Sans One'; color:#fff;}
+      .callout .brand {font-size:24px; font-family: 'Roboto Mono'; letter-spacing: 0.1em; text-transform: uppercase; color:#fff;}
     
       #benchmarks {
         padding: 18px;
