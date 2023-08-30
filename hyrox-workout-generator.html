@@ -191,9 +191,7 @@
                 </div>
               </div>
               <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">&nbsp;</div>
-              <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone">
-                &nbsp;
-              </div>
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone">&nbsp;</div>
             </div>
           </div>
         </main>
@@ -239,11 +237,13 @@
         window.open(twitterShareUrl, '_blank');
       }
       document.getElementById('shareTwitter1').addEventListener('click', function() {
-        var appendString = "#HYROX #WOD via teppo.io";
+        var currentDate = new Date().toLocaleDateString(); 
+        var appendString = currentDate + "\n" +  "#HYROX #WOD via teppo.io";
         shareDivContentOnTwitter('exCombo', appendString);
-      });
+    });
       document.getElementById('shareTwitter2').addEventListener('click', function() {
-        var appendString = "#HYROX #WOD via teppo.io";
+        var currentDate = new Date().toLocaleDateString(); 
+        var appendString = currentDate + "\n" +  "#HYROX #WOD via teppo.io";
         shareDivContentOnTwitter('exComboBias', appendString);
       });
     </script>    
