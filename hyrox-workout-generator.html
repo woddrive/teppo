@@ -21,7 +21,8 @@
     <meta name="msapplication-TileColor" content="#fcec4f">
     <meta name="theme-color" content="#f5f5eb">
     <link rel="stylesheet" href="assets/css/material.css">
-    <style>@media(max-width: 767px){.desktop-only{display: none;}}.material-icons{cursor:pointer;}</style>
+    <style>@media(max-width: 767px){.desktop-only{display: none;}}.material-icons{cursor:pointer;}#toggle-text{display:block;}#toggle-link{display:none;}@media screen and (max-width:768px){#toggle-text{display:none;}#toggle-link{display:inline;}}
+    </style>
   </head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TT1LGD7HK"></script>
@@ -70,15 +71,16 @@
               <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--12-col-phone" aria-label="Workout Generator">  
                 <p class="small mdl-color-text--yellow desktop-only">TRAIN</p>
                 <h4>Workout Generator</h4>
-                <p class="mdl-color-text--grey desktop-only">
+                <p class="mdl-color-text--grey" id="toggle-text">
                   Quickly generate unique cross-training workouts to assist in your HYROX training. Select GPP 
                   for workouts that incorporate the HYROX-specific movements and variations, whereas Strength Bias 
                   adds a mix of conventional weightlfting to further elevate athletic performance. 
                   Edit work parameters and loads as needed. 
                 </p>
+                <a href="#" class="small" id="toggle-link">What's this?</a>
               </div>
             </div>
-            <div class="mdl-grid" style="margin-top: 0;">
+            <div class="mdl-grid" style="margin-top: -20px;">
               <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
               <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone" aria-label="Workout Generator">  
                 <div class="select-icon-align">
@@ -246,6 +248,26 @@
         var appendString = currentDate + "\n" +  "#HYROX #WOD via teppo.io";
         shareDivContentOnTwitter('exComboBias', appendString);
       });
+    </script>
+    <script>
+      // Get the elements
+      const toggleText = document.getElementById('toggle-text');
+      const toggleLink = document.getElementById('toggle-link');
+  
+      // Attach event listener
+  toggleLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (toggleText.style.display === 'none' || toggleText.style.display === '') {
+        // If hidden, show text
+        toggleText.style.display = 'block';
+        toggleLink.textContent = 'Show less';
+      } else {
+        // If shown, hide text
+        toggleText.style.display = 'none';
+        toggleLink.textContent = 'What\'s this?';
+      }
+    });
+    
     </script>    
   </body>  
 </html>
