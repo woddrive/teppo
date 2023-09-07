@@ -26,6 +26,7 @@
       body{overflow-x:hidden;}#exCombo2{transition:height 0.5s ease-out;}.hidden{display:none;}.hidden-mobile{display:block;}
       @media(max-width:767px){.desktop-only{display:none;}}
       .material-icons{cursor:pointer;}
+      #toggle-text{display:block;}#toggle-link{display:none;}@media screen and (max-width:768px){#toggle-text{display:none;}#toggle-link{display:inline;}}
     </style>
   </head>
   <!-- Google tag (gtag.js) -->
@@ -102,13 +103,14 @@
                 <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--12-col-phone">  
                   <p class="small mdl-color-text--yellow desktop-only">CREATE</p>
                   <h4>Playground</h4>
-                  <p class="mdl-color-text--grey desktop-only">
+                  <p class="mdl-color-text--grey" id="toggle-text">
                     Generate unique exercise combinations and then customize them for your next workout or group training session. 
                     Append multiple combos in series for a killer HYROX workout!
-                  </p>   
+                  </p>
+                  <a href="#" class="small" id="toggle-link">What's this?</a>   
                 </div>
               </div>
-              <div class="mdl-grid" style="margin-top: 0; margin-bottom: -20px;">
+              <div class="mdl-grid" style="margin-top: -20px; margin-bottom: -20px;">
                 <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
                 <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">  
                   <div class="select-icon-align">
@@ -278,5 +280,25 @@
           shareDivContentOnTwitter('exCombo2', appendString);
       });
     </script>
+    <script>
+      // Get the elements
+      const toggleText = document.getElementById('toggle-text');
+      const toggleLink = document.getElementById('toggle-link');
+  
+      // Attach event listener
+  toggleLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (toggleText.style.display === 'none' || toggleText.style.display === '') {
+        // If hidden, show text
+        toggleText.style.display = 'block';
+        toggleLink.textContent = 'Show less';
+      } else {
+        // If shown, hide text
+        toggleText.style.display = 'none';
+        toggleLink.textContent = 'What\'s this?';
+      }
+    });
+    
+    </script>  
   </body>  
 </html>
