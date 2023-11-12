@@ -71,10 +71,20 @@
                 <p class="small mdl-color-text--yellow desktop-only">GET STARTED</p>
               </div>
               <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
-                  <div class="start-card train" onclick="window.location.href = 'hyrox-workout-generator.html';">
+                <div class="start-card train">
+                  
+                  <h2 class="desktop-only">00</h2>
+                  <h4>Train_</h4>
+                  <p>
+                    Discover the ultimate HYROX training partner with our AI coaching agent...<a id="show-dialog">Learn more</a> 
+                  </p>
+                </div>
+            </div>
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+                  <div class="start-card workout" onclick="window.location.href = 'hyrox-workout-generator.html';">
                     
                     <h2 class="desktop-only">01</h2>
-                    <h4>Train_</h4>
+                    <h4>Workouts_</h4>
                     <p>
                       Compliment your existing training program with a free HYROX workout generator. 
                     </p>
@@ -98,7 +108,7 @@
                   </p>
                 </div>
               </div>
-              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone mdl-cell--hide-tablet">
                 <div class=" start-card gains" onclick="window.location.href = 'bmr-macros-calculator.html';">
                   <h2 class="desktop-only">04</h2>
                     <h4>Gains_</h4>
@@ -120,6 +130,35 @@
             </div>
           </div>
           
+          <dialog class="mdl-dialog">
+            <div style="padding-top: 25px; text-align:center;"><img src="assets/img/agent.svg" width="50%"></div>
+            <h4 class="mdl-dialog__title mdl-typography--text-center">TEPPO_AI</h4>
+            
+            <div class="mdl-dialog__content">
+              <p>
+                In a partnership wth <a href="https://wods.ai" target="_blank" class="mdl-color-text--grey-900">WODs.ai</a> discover your ultimate HYROX training partner with our AI Coaching Agent. Get personalized training plans, 
+                race-specific strategies, and expert guidance tailored to your goals, experience, and level of fitness.
+              </p>
+            </div>
+            <div class="mdl-dialog__actions">
+              <button type="button" class="mdl-button close">CLOSE</button>
+              <a href="https://chat.openai.com/g/g-T5UHSGaPn-teppo-ai" target="_blank" class="mdl-button">TRY IT OUT</a>
+            </div>
+          </dialog>
+          <script>
+            var dialog = document.querySelector('dialog');
+            var showDialogButton = document.querySelector('#show-dialog');
+            if (! dialog.showModal) {
+              dialogPolyfill.registerDialog(dialog);
+            }
+            showDialogButton.addEventListener('click', function() {
+              dialog.showModal();
+            });
+            dialog.querySelector('.close').addEventListener('click', function() {
+              dialog.close();
+            });
+          </script>
+
         </main>
         <footer class="mdl-mini-footer" role="contentinfo">
           <div class="mdl-mini-footer__left-section">
