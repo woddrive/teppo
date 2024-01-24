@@ -14,6 +14,23 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="teppo">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@teppo_io">
+  <meta name="twitter:title" content="TEPPO">
+  <meta name="twitter:description" content="A Training Companion for HYROX Athletes">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image:src" content="https://teppo.io/assets/social/card.png">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="HYROX workout generator and training programs to boost your athleticism for the ultimate fitness race" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://teppo.io/" />
+  <meta property="og:image" content="http://example.com/image.jpg" />
+  <meta property="og:description" content="A Training Companion for HYROX Athletes" />
+  <meta property="og:site_name" content="TEPPO" />
+  
   <link rel="shortcut icon" href="assets/img/icons/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
@@ -31,7 +48,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-2TT1LGD7HK');
 </script>
 <body class="bg" onload="ranGen()">
@@ -44,9 +60,7 @@
           <img src="assets/img/teppo.svg" height="100px" alt="Teppo Logo">
           <h1 class="start">Teppo</h1>
           <p class="lead">Training Companion for HYROX Athletes</p>
-          
-          
-          <div id="challenge" role="region" aria-label="About Teppo">
+          <div id="challenge" aria-label="About Teppo">
             Teppo is a free HYROX workout generator that will help you to boost your athleticism for the ultimate fitness race. 
             Enhance strength, speed, endurance, and work capacity through targeted workouts and programs.
           </div>
