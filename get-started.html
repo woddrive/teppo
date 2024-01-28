@@ -70,7 +70,7 @@
               <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
                 <p class="small mdl-color-text--yellow desktop-only">GET STARTED</p>
               </div>
-              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone" id="hideCard">
                 <div class="start-card train">
                   
                   <h2 class="desktop-only">00</h2>
@@ -139,21 +139,23 @@
             </div>
           </div>
           
-          <dialog class="mdl-dialog">
-            <div style="padding-top: 25px; text-align:center;"><img src="assets/img/agent.svg" width="50%"></div>
-            <h4 class="mdl-dialog__title mdl-typography--text-center">TEPPO_AI</h4>
-            
-            <div class="mdl-dialog__content">
-              <p>
-                In a partnership wth <a href="https://wods.ai" target="_blank" class="mdl-color-text--grey-900">WODs.ai</a> we've created the ultimate HYROX training partner in an AI Coaching Agent. Get personalized training plans, 
-                race-specific strategies, and expert guidance tailored to your goals, experience, and level of fitness.
-              </p>
-            </div>
-            <div class="mdl-dialog__actions">
-              <button type="button" class="mdl-button close">CLOSE</button>
-              <a href="https://chat.openai.com/g/g-T5UHSGaPn-teppo-ai" target="_blank" class="mdl-button">TRY IT OUT</a>
-            </div>
-          </dialog>
+          <div id="hideDialog">
+            <dialog class="mdl-dialog">
+              <div style="padding-top: 25px; text-align:center;"><img src="assets/img/agent.svg" width="50%"></div>
+              <h4 class="mdl-dialog__title mdl-typography--text-center">TEPPO_AI</h4>
+              
+              <div class="mdl-dialog__content">
+                <p>
+                  In a partnership wth <a href="https://wods.ai" target="_blank" class="mdl-color-text--grey-900">WODs.ai</a> we've created the ultimate HYROX training partner in an AI Coaching Agent. Get personalized training plans, 
+                  race-specific strategies, and expert guidance tailored to your goals, experience, and level of fitness.
+                </p>
+              </div>
+              <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button close">CLOSE</button>
+                <a href="https://chat.openai.com/g/g-T5UHSGaPn-teppo-ai" target="_blank" class="mdl-button">TRY IT OUT</a>
+              </div>
+            </dialog>
+          </div>
           <script>
             var dialog = document.querySelector('dialog');
             var showDialogButton = document.querySelector('#show-dialog');
@@ -184,5 +186,20 @@
         </footer> 
     </div>      
     <script src="252f89/o_40b30b4.js"></script>
+    <script>
+      function hideDivsExceptChrome(divIds) {
+          var isNotChrome = !/chrome/i.test(navigator.userAgent);
+      
+          if (isNotChrome) {
+              divIds.forEach(function(divId) {
+                  var div = document.getElementById(divId);
+                  if (div) {
+                      div.style.display = 'none';
+                  }
+              });
+          }
+      }
+      hideDivsExceptChrome(['hideCard', 'hideDialog']);
+    </script>
   </body>
 </html>
