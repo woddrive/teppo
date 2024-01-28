@@ -27,3 +27,5 @@ Disallow: /
 
 User-agent: UbiCrawler
 Disallow: /
+
+Sitemap: https://www.teppo.io/sitemap.xml
