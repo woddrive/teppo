@@ -188,9 +188,12 @@
     <script src="252f89/o_40b30b4.js"></script>
     <script>
       function hideDivsExceptChrome(divIds) {
-          var isNotChrome = !/chrome/i.test(navigator.userAgent);
+          var userAgent = navigator.userAgent;
+          var isChrome = /chrome/i.test(userAgent) || /crios/i.test(userAgent); // Checks for Chrome on iOS and other platforms
+          var isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
       
-          if (isNotChrome) {
+          // If it's not Chrome and it's either Safari or a non-Chrome, non-Safari browser
+          if (!isChrome && (isSafari || !isSafari)) {
               divIds.forEach(function(divId) {
                   var div = document.getElementById(divId);
                   if (div) {
