@@ -27,6 +27,3 @@ Disallow: /
 
 User-agent: UbiCrawler
 Disallow: /
-
-User-agent: *
-Disallow:
