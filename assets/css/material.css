@@ -3375,7 +3375,7 @@ margin-left: 0; }
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 16px;
+  /*padding: 16px;*/
   cursor: default;
   color: #ffffff;
   overflow: hidden; }
@@ -3443,8 +3443,9 @@ margin-left: 0; }
   font-size: 40px;
   color: #7f56d9; }
 
-/*.mdl-list__item--two-line {
-  height: 72px; }*/
+.mdl-list__item--two-line {
+  height: 92px;
+ }
   .mdl-list__item--two-line .mdl-list__item-primary-content {
     height: 46px;
     line-height: 20px;
