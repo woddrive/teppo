@@ -28,4 +28,14 @@ Disallow: /
 User-agent: UbiCrawler
 Disallow: /
 
-Sitemap: https://www.teppo.io/sitemap.xml
+User-agent: Crawlbot
+Disallow: /
+
+User-agent: ZoominfoBot
+Disallow: /
+
+User-agent: AhrefsSiteAudit
+Disallow: /
+
+User-agent: *
+Disallow:
