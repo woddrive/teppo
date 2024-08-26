@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Intervals Generator - Boost Your Power Endurance for HYROX Dominance | teppo.io</title>
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Maximize your HYROX performance with our interval timer. Generate tailored interval workouts 
+  designed to enhance your power endurance and help you dominate your next HYROX event." />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="teppo">
+  <link rel="shortcut icon" href="assets/img/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/icons/site.webmanifest">
+  <link rel="mask-icon" href="assets/img/icons/safari-pinned-tab.svg" color="#373630">
+  <meta name="msapplication-TileColor" content="#fcec4f">
+  <meta name="theme-color" content="#f5f5eb">
+  <link rel="stylesheet" href="assets/css/material.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2TT1LGD7HK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2TT1LGD7HK');
+</script>
+
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <div class="overlay" aria-hidden="true"></div>
+  <header class="mdl-layout__header" role="banner">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Teppo</span>
+      <div class="mdl-layout-spacer"></div>
+      <button class="mdl-button mdl-button--icon mdl-ripple-effect" id="more-button" aria-expanded="false" aria-haspopup="true">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="more-button">
+        <li class="mdl-menu__item"><a href="disclaimer.html">Disclaimer</a></li>
+        <li class="mdl-menu__item"><a href="privacy.html">Privacy</a></li>
+        <li class="mdl-menu__item"><a href="contact.html">Contact</a></li>
+        <li class="mdl-menu__item"><a href="help.html">Help</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer" role="navigation" aria-label="Navigation">
+    <span class="mdl-layout-title"><img src="assets/img/teppo.svg" alt="Teppo Logo" /> Teppo</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="get-started.html">Get Started</a>
+      <a class="mdl-navigation__link" href="hyrox-workout-generator.html">Workout Generator</a>
+      <a class="mdl-navigation__link" href="custom-hyrox-workouts.html">Virtual Whiteboard</a>
+      <a class="mdl-navigation__link " href="free-hyrox-programs.html">Training Programs</a>
+      <a class="mdl-navigation__link mdl-navigation__link--current" href="hyrox-interval-training.html" aria-current="page">Interval Timer</a>
+      <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider " href="bmr-macros-calculator.html">BMR/Macros</a>
+      <a class="mdl-navigation__link" href="faqs.html" aria-current="page">FAQs</a>
+      
+</nav>
+    <div class="drawer-content" aria-hidden="true">
+      <!-- -->
+    </div>
+  </div>
+  <main class="mdl-layout__content" role="main">
+    <div class="page-content">
+      <div class="mdl-grid" style="margin-top: 0;">
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone" aria-hidden="true"><h2>04</h2></div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+          <p class="small mdl-color-text--yellow desktop-only">METCON</p>
+          <h1 class="subpage">Intervals Generator</h1>
+          <p class="mdl-color-text--grey">Boost your power endurance for HYROX dominance.</p>
+          <br>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="genInt" aria-label="Generate new intervals" 
+            onclick="generateInterval();hideButton();">Generate Intervals</button>
+          <div class="mdl-typography--text-center">
+            <h4><div id="intervalDisplay" role="status" aria-live="polite"></div></h4>
+            <div class="md-spacer"></div>
+            <h5><div id="timerDisplay" role="status" aria-live="polite"></div></h5>
+            <div class="big-spacer-top"></div>
+            <div id="actionButtons" style="display:none;" aria-hidden="true">
+              <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="startTimer()" aria-label="Start timer" aria-controls="timerDisplay">
+                <i class="material-icons">play_arrow</i>
+              </button>
+              <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="pauseTimer();" aria-label="Pause timer" aria-controls="timerDisplay">
+                <i class="material-icons">pause</i>
+              </button>
+              <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab padded" onclick="resetTimer();" aria-label="Reset timer" aria-controls="timerDisplay">
+                <i class="material-icons">history</i>
+              </button>
+              <button class="mdl-button mdl-button--primary mdl-js-button mdl-button--fab mdl-button--mini-fab" onclick="generateInterval();" aria-label="Refresh intervals" aria-controls="intervalDisplay">
+                <i class="material-icons">sync</i>
+              </button>
+            </div>
+            <audio id="bellSound" src="assets/alert.mp3" preload="auto"></audio>
+            <audio id="alertSound" src="assets/alert2.mp3" preload="auto"></audio>
+            <div id="workoutCompleted" role="status" aria-live="assertive" style="display:none;">Workout Completed</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="mdl-mini-footer" role="contentinfo">
+    <div class="mdl-mini-footer__left-section">
+      <div class="mdl-logo mdl-color-text--grey">&copy; 2022-<script> 
+          document.write(new Date().getFullYear())
+        </script> teppo.io
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="252f89/o_40b30b4.js"></script>
+
+<script>
+  let timer = null;
+  let currentRound = 0;
+  let isWorkInterval = true;
+  let timeRemaining;
+  let flashCount = 0;
+
+  function generateInterval() {
+      // Defining the allowed intervals
+      const intervals = [10, 15, 20, 30, 40, 45, 60, 90, 120];
+      
+      // Generating a random work interval
+      const workInterval = intervals[Math.floor(Math.random() * intervals.length)];
+      
+      // Filtering the rest intervals to be equal to or less than the work interval
+      const possibleRestIntervals = intervals.filter(interval => interval <= workInterval);
+      
+      // Generating a random rest interval from the filtered list
+      const restInterval = possibleRestIntervals[Math.floor(Math.random() * possibleRestIntervals.length)];
+      
+      // Generating a random number of rounds between 5 and 10
+      const rounds = Math.floor(Math.random() * 6) + 5;
+
+      // Displaying the generated interval in the div
+      document.getElementById("intervalDisplay").innerHTML = rounds + "x[" + workInterval + ":" + restInterval + "]";
+
+      // Initialize timer settings
+      initializeTimer(workInterval, restInterval, rounds);
+
+      // Display action buttons
+      document.getElementById("actionButtons").style.display = 'block';
+  }
+
+  function hideButton() {
+      // Accessing the button by its ID and changing its display property to 'none'
+      document.getElementById("genInt").style.display = 'none';
+  }
+
+  function initializeTimer(work, rest, rounds) {
+      window.workInterval = work;
+      window.restInterval = rest;
+      window.totalRounds = rounds;
+      resetTimer();
+  }
+
+  function startTimer() {
+      // Play the bell sound
+      document.getElementById("bellSound").play();
+
+      if (timer === null) {
+          timer = setInterval(updateTimer, 1000); // update every second
+      }
+  }
+
+  function pauseTimer() {
+      if (timer !== null) {
+          clearInterval(timer);
+          timer = null;
+      }
+  }
+
+  function resetTimer() {
+      pauseTimer();
+      currentRound = 1;
+      isWorkInterval = true;
+      timeRemaining = window.workInterval;
+      updateDisplay();
+  }
+
+  function endWorkout() {
+      let alertSound = document.getElementById("alertSound");
+      if (alertSound && !alertSound.playing) {
+          alertSound.play();
+      }
+
+      // Show the text cue
+      let workoutCompletedDiv = document.getElementById("workoutCompleted");
+      workoutCompletedDiv.textContent = "Workout Completed";
+      workoutCompletedDiv.style.display = "block";
+      workoutCompletedDiv.style.opacity = 1;
+
+      // Fade out the text cue after 3 seconds
+      setTimeout(() => {
+          workoutCompletedDiv.style.transition = "opacity 1s";
+          workoutCompletedDiv.style.opacity = 0;
+          setTimeout(() => {
+              workoutCompletedDiv.style.display = "none";
+          }, 1000); // Wait for fade-out transition to finish
+      }, 3000);
+
+      // Reset the timer after the cues, but do not play the sound again
+      setTimeout(() => {
+          // Before resetting, ensure no sound is played by temporarily removing the src
+          if (alertSound) {
+              let srcCache = alertSound.src;
+              alertSound.src = '';
+              resetTimer();
+              alertSound.src = srcCache;
+          } else {
+              resetTimer();
+          }
+      }, 4000);
+  }
+
+  function flashText(element) {
+      if (flashCount < 10) {
+          element.style.visibility = (element.style.visibility === 'hidden' ? '' : 'hidden');
+          flashCount++;
+          setTimeout(() => flashText(element), 500);
+      } else {
+          element.style.display = "none";
+          resetTimer(); // Reset the timer after flashing is done
+      }
+  }
+
+  function updateTimer() {
+      timeRemaining -= 1;
+
+      if (timeRemaining < 0) {
+          if (isWorkInterval) {
+              if (currentRound < window.totalRounds) {
+                  isWorkInterval = false;
+                  timeRemaining = window.restInterval;
+              } else {
+                  // Move to the rest interval after the last work interval
+                  isWorkInterval = false;
+                  timeRemaining = window.restInterval;
+              }
+          } else {
+              if (currentRound < window.totalRounds) {
+                  currentRound += 1;
+                  isWorkInterval = true;
+                  timeRemaining = window.workInterval;
+              } else {
+                  // Trigger the end workout cues only after the last rest interval is over
+                  timeRemaining = 0; // Ensure the timer shows 0 before ending the workout
+                  endWorkout();
+                  return;
+              }
+          }
+      }
+
+      updateDisplay();
+  }
+  function updateDisplay() {
+    // Format timeRemaining as MM:SS
+    let minutes = Math.floor(timeRemaining / 60);
+    let seconds = timeRemaining % 60;
+    let formattedTime = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+    let statusHtml = isWorkInterval ? '<span style="color: green;">Work</span>' : '<span style="color: red;">Rest</span>';
+    document.getElementById("timerDisplay").innerHTML = "Round " + currentRound + "/" + window.totalRounds + 
+                                                        "<br><br>" + 
+                                                        statusHtml + "<h1>" + formattedTime + "</h1>" + " REMAINING";
+}
+
+</script>
+
+</body>
+</html>

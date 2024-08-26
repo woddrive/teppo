@@ -53,12 +53,13 @@
         <div class="mdl-layout__drawer">
           <span class="mdl-layout-title"><img src="assets/img/teppo.svg"/> Teppo</span>
           <nav class="mdl-navigation" role="navigation" aria-label="Main">
-            <a class="mdl-navigation__link mdl-navigation__link--current" href="get-started.html">Get Started</a>
+            <a class="mdl-navigation__link mdl-navigation__link--current" href="get-started.html" aria-current="page">Get Started</a>
             <a class="mdl-navigation__link" href="https://chat.openai.com/g/g-T5UHSGaPn-hyrox-coach" target="_blank">AI Coach</a>
             <a class="mdl-navigation__link" href="hyrox-workout-generator.html">Workout Generator</a>
             <a class="mdl-navigation__link" href="custom-hyrox-workouts.html">Virtual Whiteboard</a>
-            <a class="mdl-navigation__link " href="free-hyrox-programs.html">Training Programs</a>
-            <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="bmr-macros-calculator.html" aria-current="page">BMR/Macros</a>
+            <a class="mdl-navigation__link" href="free-hyrox-programs.html">Training Programs</a>
+            <a class="mdl-navigation__link" href="hyrox-interval-training.html">Interval Timer</a>
+            <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="bmr-macros-calculator.html">BMR/Macros</a>
             <a class="mdl-navigation__link" href="faqs.html">FAQs</a>
           </nav>
           <div class="drawer-content">
@@ -109,9 +110,18 @@
                   </p>
                 </div>
               </div>
-              <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone mdl-cell--hide-tablet">
-                <div class=" start-card gains" onclick="window.location.href = 'bmr-macros-calculator.html';">
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+                <div class=" start-card metcon" onclick="window.location.href = 'faqs.html';">
                   <h2 class="desktop-only">04</h2>
+                    <h4>METCON_ <small><span class="mdl-color-text--yellow">beta</span></small></h4>
+                  <p>
+                    Leverage interval training to take your power endurance to the next level.
+                  </p>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+                <div class=" start-card gains" onclick="window.location.href = 'bmr-macros-calculator.html';">
+                  <h2 class="desktop-only">05</h2>
                     <h4>Gains_</h4>
                   <p>
                     Fuel and optimize your HYROX training by finding the perfect macros ratio.
@@ -120,22 +130,14 @@
               </div>
               <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone mdl-cell--hide-tablet">
                 <div class=" start-card faq" onclick="window.location.href = 'faqs.html';">
-                  <h2 class="desktop-only">05</h2>
+                  <h2 class="desktop-only">06</h2>
                     <h4>FAQs_</h4>
                   <p>
                     Get the gist by diving straight into some frequently asked questions.
                   </p>
                 </div>
               </div>
-              <!--<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone mdl-cell--hide-tablet">
-                <div class=" start-card metcon" onclick="window.location.href = 'faqs.html';">
-                  <h2 class="desktop-only">06</h2>
-                    <h4>METCON_ <small><span class="mdl-color-text--yellow">beta</span></small></h4>
-                  <p>
-                    Leverage interval training to take your power endurance to the next level.
-                  </p>
-                </div>
-              </div>-->
+              
              
             </div>
           </div>
