@@ -206,7 +206,7 @@ h5 {
   font-family: "Roboto Mono", monospace;
   font-size: 20px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.3;
   margin-top: 24px;
   margin-bottom: 16px; }
 
@@ -277,7 +277,22 @@ ul, ol {
     margin-bottom: 10px;
     color: rgb(170,170,170)
   }
+.program-display {
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-top: 24px;
+  margin-bottom: 16px; }
 
+  .program-display-week {
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    color: #fcc04f;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 24px;
+    margin-bottom: 16px; }  
 .mdl-typography--display-4 {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 112px;
@@ -368,11 +383,13 @@ margin-bottom: 32px; }
   opacity: 0.87; }
 
 .mdl-typography--subhead {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto Mono", monospace;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0.04em; }
+  letter-spacing: 0.1em;
+  opacity: 0.57;
+margin-bottom: 12px; }
 
 .mdl-typography--subhead-color-contrast {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
