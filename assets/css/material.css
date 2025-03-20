@@ -6417,6 +6417,7 @@ hr.mini {
 .error h1 { font-size: 66px; font-weight: 300;}
 .error h2 { font-weight: 700;}
 .login p{color: #ffffff;}
+.login h2 {letter-spacing: 0.1em;}
 
 
     @media screen and (max-width: 468px) {
