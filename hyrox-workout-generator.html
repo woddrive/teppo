@@ -75,7 +75,7 @@
               <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"><h2 class="mdl-color-text--yellow">01</h2></div>
               <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--12-col-phone" aria-label="Workout Generator">  
                 <p class="small mdl-color-text--yellow desktop-only">TRAIN</p>
-                <h1 class="subpage">HYROX Workout Generator</h1>
+                <h1 class="subpage">HYROX WOD Generator</h1>
                 <p class="mdl-color-text--grey" id="toggle-text">
                   Quickly generate unique cross-training workouts to assist in your HYROX training. Select GPP 
                   for workouts that incorporate the HYROX-specific movements and variations; select Strength Bias 
@@ -118,18 +118,18 @@
                   <div id="gpploader" class="loader"></div>
                   <div id="exCombo" style="display:none;"></div>
                   <div class="icon-container">
-                      <a href="#" id="editgppButton" title="Edit details" style="display: none;" onclick="makegppEditable()" aria-label="Edit workout details">
+                      <a href="#" id="editgppButton" title="Edit workout details" style="display: none;" onclick="makegppEditable()" aria-label="Edit workout details">
                       <i class="material-icons material-icons-edit">edit</i>
                     </a>
-                    <a href="#" id="gppcopyButton" style="display: none;" onclick="copyGppToClipboard()" aria-label="Copy workout to clipboard">
+                    <a href="#" id="gppcopyButton" title="Copy workout to clipboard" style="display: none;" onclick="copyGppToClipboard()" aria-label="Copy workout to clipboard">
                       <i class="material-icons">content_copy</i>
                     </a>
                     <div style="position: absolute; margin-top:58px" id="gpp-message"></div>
-                    <a href="#" id="gppopenNew" style="display: none;" onclick="copyGPP()" aria-label="Open workout in new tab">
+                    <a href="#" id="gppopenNew" title="Open workout in new tab" style="display: none;" onclick="copyGPP()" aria-label="Open workout in new tab">
                       <i class="material-icons">open_in_new</i>
                     </a>
                     <div id="tooltipContainer1">
-                      <a id="shareButton" class="material-icons" aria-label="Share on social media">share</a>
+                      <a id="shareButton" class="material-icons" aria-label="Share on social media" title="Share on social media">share</a>
                       <div id="tooltip1" class="tooltip1 hidden" style="position: absolute; bottom: 100%;">
                         <a id="shareTwitter1" >
                           <svg id="icon-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -166,18 +166,18 @@
                   <div id="biasloader" class="loader"></div>
                   <div id="exComboBias" style="display:none;"></div>
                   <div class="icon-container">
-                      <a href="#" id="editbiasButton" title="Edit details" style="display: none;" onclick="makebiasEditable()" aria-label="Edit workout details">
+                      <a href="#" id="editbiasButton" title="Edit workout details" style="display: none;" onclick="makebiasEditable()" aria-label="Edit workout details">
                       <i class="material-icons material-icons-edit-bias">edit</i>
                     </a>
-                    <a href="#" id="biascopyButton" style="display: none;" onclick="copyBiasToClipboard()" aria-label="Copy workout to clipboard">
+                    <a href="#" id="biascopyButton" title="Copy workout to clipboard" style="display: none;" onclick="copyBiasToClipboard()" aria-label="Copy workout to clipboard">
                       <i class="material-icons">content_copy</i>
                     </a>
                     <div style="position: absolute; margin-top:58px" id="bias-message"></div>
-                    <a href="#" id="biasopenNew" style="display: none;" onclick="copyBias()" aria-label="Open workout in new tab">
+                    <a href="#" id="biasopenNew" title="Open workout in new tab" style="display: none;" onclick="copyBias()" aria-label="Open workout in new tab">
                       <i class="material-icons">open_in_new</i>
                     </a>
                     <div id="tooltipContainer2">
-                      <a id="sharebiasButton" class="material-icons" aria-label="Share on social media">share</a>
+                      <a id="sharebiasButton" title="Share on social media" class="material-icons" aria-label="Share on social media">share</a>
                       <div id="tooltip2" class="tooltip2 hidden" style="position: absolute; bottom: 100%;">
                         <a id="shareTwitter2" >
                           <svg id="icon-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
